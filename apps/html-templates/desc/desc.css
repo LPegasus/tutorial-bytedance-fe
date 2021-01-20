@@ -1,0 +1,7 @@
+.card-desc {
+  display: inline-block;
+}
+
+.card-desc text {
+  fill: var(--color-neutral-999);
+}

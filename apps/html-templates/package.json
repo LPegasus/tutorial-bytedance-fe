@@ -1,0 +1,11 @@
+{
+  "name": "html-templates",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "*"
+  }
+}

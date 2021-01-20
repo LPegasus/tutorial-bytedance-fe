@@ -1,0 +1,13 @@
+.tag {
+  display: inline-block;
+}
+
+.pin-top rect {
+  stroke: var(--color-tag-border-red);
+  fill: none;
+  stroke-width: 1;
+}
+
+.pin-top text {
+  fill: var(--color-tag-red);
+}

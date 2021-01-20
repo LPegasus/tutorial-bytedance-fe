@@ -1,0 +1,115 @@
+.card-item:first-of-type {
+  margin-block-start: 0;
+}
+.card-item {
+  margin-block: 1rem;
+}
+
+.card-item-anchor {
+  display: block;
+  color: var(--color-dark-0);
+}
+
+.card-item-detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-item-title {
+  letter-spacing: 0.15ch;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-item-content {
+  max-width: 100%;
+  padding-block: calc(var(--gap-width) / 2);
+  flex: 1 0 66%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-item-pic {
+  flex: 0 0 34%;
+  display: flex;
+  align-items: center;
+}
+.card-item-pic>div{
+  width: 100%;
+  padding-block-start: 75%;
+  position: relative;
+}
+.card-item-pic>div>img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-position:center;
+  object-fit:cover;
+}
+
+.card-item-pic-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  overflow: visible;
+  width: calc(100% + 2px);
+  margin-inline-start: -1px;
+  margin-block-start: calc(var(--gap-width) * 0.75);
+}
+
+.card-item-pic-list>div {
+  flex: 1;
+  padding-inline: 1px;
+  width: 33.33%;
+  padding-block-start: calc(33.33% * 0.75);
+  position: relative;
+}
+
+.card-item-pic-list>div>img{
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  width: calc(100% - 2px);
+  height: 100%;
+  top: 0;
+}
+
+.card-item-detail>*:first-child:not(:last-child) {
+  padding-right: calc(var(--gap-width) * 2);
+}
+
+.card-item-desc {
+  display: flex;
+  margin-block-start: var(--gap-width);
+}
+.card-item-desc *:not(:last-child) {
+  margin-inline-end: var(--gap-width);
+}
+
+.card-item-banner-pic {
+  margin-block-start: calc(var(--gap-width) * 0.75);
+  width: 100%;
+}
+.card-item-banner-pic>div {
+  position: relative;
+  width: 100%;
+  padding-block-start: 60%;
+}
+.card-item-banner-pic>div>img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
