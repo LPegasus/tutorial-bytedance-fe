@@ -1,23 +1,26 @@
 dependencies:
   '@material-ui/core': registry.npm.taobao.org/@material-ui/core/4.11.2_4695a47c40ef995f48f8c834d2fb82ec
+  '@material-ui/icons': registry.npm.taobao.org/@material-ui/icons/4.11.2_e4effca6b49278ee8e7787d60e542f40
   '@rush-temp/html-templates': 'file:projects/html-templates.tgz'
-  '@rush-temp/my-monorepo': 'file:projects/my-monorepo.tgz_4695a47c40ef995f48f8c834d2fb82ec'
   '@rush-temp/toutiao-lite-web': 'file:projects/toutiao-lite-web.tgz'
   '@svgr/webpack': registry.npm.taobao.org/@svgr/webpack/5.5.0
   '@types/node': registry.npm.taobao.org/@types/node/14.14.20
   '@types/react': registry.npm.taobao.org/@types/react/17.0.0
-  '@types/styled-components': registry.npm.taobao.org/@types/styled-components/5.1.7
-  '@typescript-eslint/eslint-plugin': registry.npm.taobao.org/@typescript-eslint/eslint-plugin/4.12.0_a57a3c9683d605c9fef31e466daa018e
-  '@typescript-eslint/parser': registry.npm.taobao.org/@typescript-eslint/parser/4.12.0_eslint@7.17.0
+  '@typescript-eslint/eslint-plugin': registry.npm.taobao.org/@typescript-eslint/eslint-plugin/4.12.0_343306961d6b60bcf6bd09d193a54461
+  '@typescript-eslint/parser': registry.npm.taobao.org/@typescript-eslint/parser/4.12.0_eslint@7.17.0+typescript@4.1.3
+  dayjs: registry.npm.taobao.org/dayjs/1.10.4
   eslint: registry.npm.taobao.org/eslint/7.17.0
   eslint-config-react-app: registry.npm.taobao.org/eslint-config-react-app/6.0.0_478ba9df4ef48a91cbf0983b639cce1b
   eslint-plugin-import: registry.npm.taobao.org/eslint-plugin-import/2.22.1_eslint@7.17.0
+  immer: registry.npm.taobao.org/immer/8.0.0
   lite-server: registry.npm.taobao.org/lite-server/2.6.1
-  next: registry.npm.taobao.org/next/10.0.5_react-dom@17.0.1+react@17.0.1
+  next: registry.npm.taobao.org/next/10.0.5_c39e9db791ea05e3ec4e0e74abb7a6b5
   prettier: registry.npm.taobao.org/prettier/2.2.1
   react: registry.npm.taobao.org/react/17.0.1
   react-dom: registry.npm.taobao.org/react-dom/17.0.1_react@17.0.1
+  recoil: registry.npm.taobao.org/recoil/0.1.2_react-dom@17.0.1+react@17.0.1
   tslib: registry.npm.taobao.org/tslib/2.1.0
+  typescript: registry.npm.taobao.org/typescript/4.1.3
 lockfileVersion: 5.2
 packages:
   'file:projects/html-templates.tgz':
@@ -30,43 +33,33 @@ packages:
       integrity: sha512-sA0iagMTiij6GwXvbokvwb0idMB5ulGw5OHQiTHZhjuyl+HXUtC+56ufh4Bp4WRJYv16zA0hyjA9ECau7VUSJg==
       tarball: 'file:projects/html-templates.tgz'
     version: 0.0.0
-  'file:projects/my-monorepo.tgz_4695a47c40ef995f48f8c834d2fb82ec':
-    dependencies:
-      '@material-ui/core': registry.npm.taobao.org/@material-ui/core/4.11.2_4695a47c40ef995f48f8c834d2fb82ec
-      typescript: registry.npm.taobao.org/typescript/4.1.3
-    dev: false
-    id: 'file:projects/my-monorepo.tgz'
-    name: '@rush-temp/my-monorepo'
-    peerDependencies:
-      '@types/react': '*'
-      react: '*'
-      react-dom: '*'
-    resolution:
-      integrity: sha512-SQYquaEHhs2OD9JN+6t9iewLXbzBAFqqRLD7t5z6rNCX+WsLkAvMAi09Am7laZ4/tlYTY/zXLokozAipsH4KwQ==
-      tarball: 'file:projects/my-monorepo.tgz'
-    version: 0.0.0
   'file:projects/toutiao-lite-web.tgz':
     dependencies:
+      '@material-ui/core': registry.npm.taobao.org/@material-ui/core/4.11.2_4695a47c40ef995f48f8c834d2fb82ec
+      '@material-ui/icons': registry.npm.taobao.org/@material-ui/icons/4.11.2_e4effca6b49278ee8e7787d60e542f40
       '@svgr/webpack': registry.npm.taobao.org/@svgr/webpack/5.5.0
       '@types/node': registry.npm.taobao.org/@types/node/14.14.20
       '@types/react': registry.npm.taobao.org/@types/react/17.0.0
       '@types/styled-components': registry.npm.taobao.org/@types/styled-components/5.1.7
       '@typescript-eslint/eslint-plugin': registry.npm.taobao.org/@typescript-eslint/eslint-plugin/4.12.0_343306961d6b60bcf6bd09d193a54461
       '@typescript-eslint/parser': registry.npm.taobao.org/@typescript-eslint/parser/4.12.0_eslint@7.17.0+typescript@4.1.3
+      dayjs: registry.npm.taobao.org/dayjs/1.10.4
       eslint: registry.npm.taobao.org/eslint/7.17.0
       eslint-config-react-app: registry.npm.taobao.org/eslint-config-react-app/6.0.0_478ba9df4ef48a91cbf0983b639cce1b
       eslint-plugin-import: registry.npm.taobao.org/eslint-plugin-import/2.22.1_eslint@7.17.0
-      next: registry.npm.taobao.org/next/10.0.5_react-dom@17.0.1+react@17.0.1
+      immer: registry.npm.taobao.org/immer/8.0.0
+      next: registry.npm.taobao.org/next/10.0.5_c39e9db791ea05e3ec4e0e74abb7a6b5
       prettier: registry.npm.taobao.org/prettier/2.2.1
       react: registry.npm.taobao.org/react/17.0.1
       react-dom: registry.npm.taobao.org/react-dom/17.0.1_react@17.0.1
+      recoil: registry.npm.taobao.org/recoil/0.1.2_react-dom@17.0.1+react@17.0.1
       styled-components: registry.npm.taobao.org/styled-components/5.2.1_react-dom@17.0.1+react@17.0.1
       tslib: registry.npm.taobao.org/tslib/2.1.0
       typescript: registry.npm.taobao.org/typescript/4.1.3
     dev: false
     name: '@rush-temp/toutiao-lite-web'
     resolution:
-      integrity: sha512-zjYW/wO1GdoT3GLqym07FoxLjvKoL/YHJ759H9LTTG4FxCaBwjLFdbbomJNTnRfktgfRlgoJmvV6QS5kuKf/Pg==
+      integrity: sha512-rYYqJ3WNmmDf1P5jtuyB78XCKS1CeCEHARzdIKsKEqPYg87Us6CttnFIsc10xdThRb3Uvno5IOCwXvjWuXzwLA==
       tarball: 'file:projects/toutiao-lite-web.tgz'
     version: 0.0.0
   registry.npm.taobao.org/@ampproject/toolbox-core/2.7.4:
@@ -1748,10 +1741,38 @@ packages:
       '@types/react': ^16.8.6 || ^17.0.0
       react: ^16.8.0 || ^17.0.0
       react-dom: ^16.8.0 || ^17.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
     resolution:
       integrity: sha1-+Cdt+kDYgwTmzrmJYq9zgD0n1C0=
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/@material-ui/core/download/@material-ui/core-4.11.2.tgz'
+    version: 4.11.2
+  registry.npm.taobao.org/@material-ui/icons/4.11.2_e4effca6b49278ee8e7787d60e542f40:
+    dependencies:
+      '@babel/runtime': registry.npm.taobao.org/@babel/runtime/7.12.5
+      '@material-ui/core': registry.npm.taobao.org/@material-ui/core/4.11.2_4695a47c40ef995f48f8c834d2fb82ec
+      '@types/react': registry.npm.taobao.org/@types/react/17.0.0
+      react: registry.npm.taobao.org/react/17.0.1
+      react-dom: registry.npm.taobao.org/react-dom/17.0.1_react@17.0.1
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    id: registry.npm.taobao.org/@material-ui/icons/4.11.2
+    name: '@material-ui/icons'
+    peerDependencies:
+      '@material-ui/core': ^4.0.0
+      '@types/react': ^16.8.6 || ^17.0.0
+      react: ^16.8.0 || ^17.0.0
+      react-dom: ^16.8.0 || ^17.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    resolution:
+      integrity: sha1-s6c1MmZRnNdDtkYa6f38sbJetMU=
+      registry: 'https://r.npm.taobao.org/'
+      tarball: 'https://registry.npm.taobao.org/@material-ui/icons/download/@material-ui/icons-4.11.2.tgz'
     version: 4.11.2
   registry.npm.taobao.org/@material-ui/styles/4.11.2_4695a47c40ef995f48f8c834d2fb82ec:
     dependencies:
@@ -1783,6 +1804,9 @@ packages:
       '@types/react': ^16.8.6 || ^17.0.0
       react: ^16.8.0 || ^17.0.0
       react-dom: ^16.8.0 || ^17.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
     resolution:
       integrity: sha1-5wVYvj9BcZ6MDWPHo8muFj/chMs=
       registry: 'https://r.npm.taobao.org/'
@@ -1806,6 +1830,9 @@ packages:
       '@types/react': ^16.8.6 || ^17.0.0
       react: ^16.8.0 || ^17.0.0
       react-dom: ^16.8.0 || ^17.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
     resolution:
       integrity: sha1-fwp1S7o2c+1f2/oC/kOAlsEEsfY=
       registry: 'https://r.npm.taobao.org/'
@@ -1819,6 +1846,9 @@ packages:
     name: '@material-ui/types'
     peerDependencies:
       '@types/react': '*'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
     resolution:
       integrity: sha1-76HHoLDqpMfIesA5BEXw+IsNiPI=
       registry: 'https://r.npm.taobao.org/'
@@ -2255,55 +2285,6 @@ packages:
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-4.12.0.tgz'
     version: 4.12.0
-  registry.npm.taobao.org/@typescript-eslint/eslint-plugin/4.12.0_a57a3c9683d605c9fef31e466daa018e:
-    dependencies:
-      '@typescript-eslint/experimental-utils': registry.npm.taobao.org/@typescript-eslint/experimental-utils/4.12.0_eslint@7.17.0
-      '@typescript-eslint/parser': registry.npm.taobao.org/@typescript-eslint/parser/4.12.0_eslint@7.17.0
-      '@typescript-eslint/scope-manager': registry.npm.taobao.org/@typescript-eslint/scope-manager/4.12.0
-      debug: registry.npm.taobao.org/debug/4.3.1
-      eslint: registry.npm.taobao.org/eslint/7.17.0
-      functional-red-black-tree: registry.npm.taobao.org/functional-red-black-tree/1.0.1
-      regexpp: registry.npm.taobao.org/regexpp/3.1.0
-      semver: registry.npm.taobao.org/semver/7.3.4
-      tsutils: registry.npm.taobao.org/tsutils/3.19.0
-    dev: false
-    engines:
-      node: ^10.12.0 || >=12.0.0
-    id: registry.npm.taobao.org/@typescript-eslint/eslint-plugin/4.12.0
-    name: '@typescript-eslint/eslint-plugin'
-    peerDependencies:
-      '@typescript-eslint/parser': ^4.0.0
-      eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    resolution:
-      integrity: sha1-ANGyO0C1gDHm18BKW8bBowoug0o=
-      registry: 'https://r.npm.taobao.org/'
-      tarball: 'https://registry.npm.taobao.org/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-4.12.0.tgz'
-    version: 4.12.0
-  registry.npm.taobao.org/@typescript-eslint/experimental-utils/4.12.0_eslint@7.17.0:
-    dependencies:
-      '@types/json-schema': registry.npm.taobao.org/@types/json-schema/7.0.6
-      '@typescript-eslint/scope-manager': registry.npm.taobao.org/@typescript-eslint/scope-manager/4.12.0
-      '@typescript-eslint/types': registry.npm.taobao.org/@typescript-eslint/types/4.12.0
-      '@typescript-eslint/typescript-estree': registry.npm.taobao.org/@typescript-eslint/typescript-estree/4.12.0
-      eslint: registry.npm.taobao.org/eslint/7.17.0
-      eslint-scope: registry.npm.taobao.org/eslint-scope/5.1.1
-      eslint-utils: registry.npm.taobao.org/eslint-utils/2.1.0
-    dev: false
-    engines:
-      node: ^10.12.0 || >=12.0.0
-    id: registry.npm.taobao.org/@typescript-eslint/experimental-utils/4.12.0
-    name: '@typescript-eslint/experimental-utils'
-    peerDependencies:
-      eslint: '*'
-    resolution:
-      integrity: sha1-Nyg45223bJpWlZIXt2ihn3EpVGs=
-      registry: 'https://r.npm.taobao.org/'
-      tarball: 'https://registry.npm.taobao.org/@typescript-eslint/experimental-utils/download/@typescript-eslint/experimental-utils-4.12.0.tgz'
-    version: 4.12.0
   registry.npm.taobao.org/@typescript-eslint/experimental-utils/4.12.0_eslint@7.17.0+typescript@4.1.3:
     dependencies:
       '@types/json-schema': registry.npm.taobao.org/@types/json-schema/7.0.6
@@ -2325,29 +2306,6 @@ packages:
       integrity: sha1-Nyg45223bJpWlZIXt2ihn3EpVGs=
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/@typescript-eslint/experimental-utils/download/@typescript-eslint/experimental-utils-4.12.0.tgz'
-    version: 4.12.0
-  registry.npm.taobao.org/@typescript-eslint/parser/4.12.0_eslint@7.17.0:
-    dependencies:
-      '@typescript-eslint/scope-manager': registry.npm.taobao.org/@typescript-eslint/scope-manager/4.12.0
-      '@typescript-eslint/types': registry.npm.taobao.org/@typescript-eslint/types/4.12.0
-      '@typescript-eslint/typescript-estree': registry.npm.taobao.org/@typescript-eslint/typescript-estree/4.12.0
-      debug: registry.npm.taobao.org/debug/4.3.1
-      eslint: registry.npm.taobao.org/eslint/7.17.0
-    dev: false
-    engines:
-      node: ^10.12.0 || >=12.0.0
-    id: registry.npm.taobao.org/@typescript-eslint/parser/4.12.0
-    name: '@typescript-eslint/parser'
-    peerDependencies:
-      eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    resolution:
-      integrity: sha1-4c8wQ25PkWwx/MliFYkXvZ6dRgo=
-      registry: 'https://r.npm.taobao.org/'
-      tarball: 'https://registry.npm.taobao.org/@typescript-eslint/parser/download/@typescript-eslint/parser-4.12.0.tgz'
     version: 4.12.0
   registry.npm.taobao.org/@typescript-eslint/parser/4.12.0_eslint@7.17.0+typescript@4.1.3:
     dependencies:
@@ -2395,30 +2353,6 @@ packages:
       integrity: sha1-+4kf58zJ6osrvSeA422kXQ3AVeU=
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/@typescript-eslint/types/download/@typescript-eslint/types-4.12.0.tgz'
-    version: 4.12.0
-  registry.npm.taobao.org/@typescript-eslint/typescript-estree/4.12.0:
-    dependencies:
-      '@typescript-eslint/types': registry.npm.taobao.org/@typescript-eslint/types/4.12.0
-      '@typescript-eslint/visitor-keys': registry.npm.taobao.org/@typescript-eslint/visitor-keys/4.12.0
-      debug: registry.npm.taobao.org/debug/4.3.1
-      globby: registry.npm.taobao.org/globby/11.0.2
-      is-glob: registry.npm.taobao.org/is-glob/4.0.1
-      lodash: registry.npm.taobao.org/lodash/4.17.20
-      semver: registry.npm.taobao.org/semver/7.3.4
-      tsutils: registry.npm.taobao.org/tsutils/3.19.0
-    dev: false
-    engines:
-      node: ^10.12.0 || >=12.0.0
-    name: '@typescript-eslint/typescript-estree'
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    resolution:
-      integrity: sha1-OWNBjIUPVkvas4gq4jeV0RXW0y4=
-      registry: 'https://r.npm.taobao.org/'
-      tarball: 'https://registry.npm.taobao.org/@typescript-eslint/typescript-estree/download/@typescript-eslint/typescript-estree-4.12.0.tgz'
     version: 4.12.0
   registry.npm.taobao.org/@typescript-eslint/typescript-estree/4.12.0_typescript@4.1.3:
     dependencies:
@@ -3172,11 +3106,14 @@ packages:
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/atob/download/atob-2.1.2.tgz'
     version: 2.1.2
-  registry.npm.taobao.org/axios/0.21.1:
+  registry.npm.taobao.org/axios/0.21.1_debug@4.3.1:
     dependencies:
-      follow-redirects: registry.npm.taobao.org/follow-redirects/1.13.1
+      follow-redirects: registry.npm.taobao.org/follow-redirects/1.13.1_debug@4.3.1
     dev: false
+    id: registry.npm.taobao.org/axios/0.21.1
     name: axios
+    peerDependencies:
+      debug: '*'
     resolution:
       integrity: sha1-IlY0gZYvTWvemnbVFu8OXTwJsrg=
       registry: 'https://r.npm.taobao.org/'
@@ -4743,6 +4680,14 @@ packages:
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/data-uri-to-buffer/download/data-uri-to-buffer-3.0.1.tgz'
     version: 3.0.1
+  registry.npm.taobao.org/dayjs/1.10.4:
+    dev: false
+    name: dayjs
+    resolution:
+      integrity: sha1-jlRKm4aD9heD9XCYCoqA6vVKseI=
+      registry: 'https://r.npm.taobao.org/'
+      tarball: 'https://registry.npm.taobao.org/dayjs/download/dayjs-1.10.4.tgz'
+    version: 1.10.4
   registry.npm.taobao.org/debug/2.6.9:
     dependencies:
       ms: registry.npm.taobao.org/ms/2.0.0
@@ -5540,8 +5485,8 @@ packages:
     version: 1.0.5
   registry.npm.taobao.org/eslint-config-react-app/6.0.0_478ba9df4ef48a91cbf0983b639cce1b:
     dependencies:
-      '@typescript-eslint/eslint-plugin': registry.npm.taobao.org/@typescript-eslint/eslint-plugin/4.12.0_a57a3c9683d605c9fef31e466daa018e
-      '@typescript-eslint/parser': registry.npm.taobao.org/@typescript-eslint/parser/4.12.0_eslint@7.17.0
+      '@typescript-eslint/eslint-plugin': registry.npm.taobao.org/@typescript-eslint/eslint-plugin/4.12.0_343306961d6b60bcf6bd09d193a54461
+      '@typescript-eslint/parser': registry.npm.taobao.org/@typescript-eslint/parser/4.12.0_eslint@7.17.0+typescript@4.1.3
       confusing-browser-globals: registry.npm.taobao.org/confusing-browser-globals/1.0.10
       eslint: registry.npm.taobao.org/eslint/7.17.0
       eslint-plugin-import: registry.npm.taobao.org/eslint-plugin-import/2.22.1_eslint@7.17.0
@@ -6169,6 +6114,29 @@ packages:
     engines:
       node: '>=4.0'
     name: follow-redirects
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    resolution:
+      integrity: sha1-X2m4Ezds7k/QR0o6uoNd8Eq3Y7c=
+      registry: 'https://r.npm.taobao.org/'
+      tarball: 'https://registry.npm.taobao.org/follow-redirects/download/follow-redirects-1.13.1.tgz'
+    version: 1.13.1
+  registry.npm.taobao.org/follow-redirects/1.13.1_debug@4.3.1:
+    dependencies:
+      debug: registry.npm.taobao.org/debug/4.3.1
+    dev: false
+    engines:
+      node: '>=4.0'
+    id: registry.npm.taobao.org/follow-redirects/1.13.1
+    name: follow-redirects
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
     resolution:
       integrity: sha1-X2m4Ezds7k/QR0o6uoNd8Eq3Y7c=
       registry: 'https://r.npm.taobao.org/'
@@ -6269,6 +6237,8 @@ packages:
       node: '>= 4.0'
     name: fsevents
     optional: true
+    os:
+      - darwin
     requiresBuild: true
     resolution:
       integrity: sha1-8yXLBFVZJCi88Rs4M3DvcOO/zDg=
@@ -6282,6 +6252,8 @@ packages:
       node: ^8.16.0 || ^10.6.0 || >=11.0.0
     name: fsevents
     optional: true
+    os:
+      - darwin
     resolution:
       integrity: sha1-+3OHA66NL5/pAMM4Nt3r7ouX8j4=
       registry: 'https://r.npm.taobao.org/'
@@ -6293,6 +6265,8 @@ packages:
       node: ^8.16.0 || ^10.6.0 || >=11.0.0
     name: fsevents
     optional: true
+    os:
+      - darwin
     resolution:
       integrity: sha1-sgmrFMYQEmNsiGNQft9/tozFTp8=
       registry: 'https://r.npm.taobao.org/'
@@ -6842,6 +6816,14 @@ packages:
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/ignore/download/ignore-5.1.8.tgz?cache=0&sync_timestamp=1610091174025&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fignore%2Fdownload%2Fignore-5.1.8.tgz'
     version: 5.1.8
+  registry.npm.taobao.org/immer/8.0.0:
+    dev: false
+    name: immer
+    resolution:
+      integrity: sha1-CHY1Sbqd19Xi60vsUEqDFb2UQMI=
+      registry: 'https://r.npm.taobao.org/'
+      tarball: 'https://registry.npm.taobao.org/immer/download/immer-8.0.0.tgz'
+    version: 8.0.0
   registry.npm.taobao.org/immutable/3.8.2:
     dev: false
     engines:
@@ -7762,7 +7744,7 @@ packages:
     version: 2.0.0
   registry.npm.taobao.org/localtunnel/2.0.1:
     dependencies:
-      axios: registry.npm.taobao.org/axios/0.21.1
+      axios: registry.npm.taobao.org/axios/0.21.1_debug@4.3.1
       debug: registry.npm.taobao.org/debug/4.3.1
       openurl: registry.npm.taobao.org/openurl/1.1.1
       yargs: registry.npm.taobao.org/yargs/16.2.0
@@ -8331,7 +8313,7 @@ packages:
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/next-tick/download/next-tick-1.0.0.tgz'
     version: 1.0.0
-  registry.npm.taobao.org/next/10.0.5_react-dom@17.0.1+react@17.0.1:
+  registry.npm.taobao.org/next/10.0.5_c39e9db791ea05e3ec4e0e74abb7a6b5:
     dependencies:
       '@ampproject/toolbox-optimizer': registry.npm.taobao.org/@ampproject/toolbox-optimizer/2.7.1-alpha.0
       '@babel/runtime': registry.npm.taobao.org/@babel/runtime/7.12.5
@@ -8361,7 +8343,7 @@ packages:
       node-html-parser: registry.npm.taobao.org/node-html-parser/1.4.9
       p-limit: registry.npm.taobao.org/p-limit/3.1.0
       path-browserify: registry.npm.taobao.org/path-browserify/1.0.1
-      pnp-webpack-plugin: registry.npm.taobao.org/pnp-webpack-plugin/1.6.4
+      pnp-webpack-plugin: registry.npm.taobao.org/pnp-webpack-plugin/1.6.4_typescript@4.1.3
       postcss: registry.npm.taobao.org/postcss/8.1.7
       process: registry.npm.taobao.org/process/0.11.10
       prop-types: registry.npm.taobao.org/prop-types/15.7.2
@@ -8395,6 +8377,7 @@ packages:
       react: ^16.6.0 || ^17
       react-dom: ^16.6.0 || ^17
       sass: ^1.3.0
+      typescript: '*'
     peerDependenciesMeta:
       fibers:
         optional: true
@@ -9177,13 +9160,16 @@ packages:
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/platform/download/platform-1.3.6.tgz'
     version: 1.3.6
-  registry.npm.taobao.org/pnp-webpack-plugin/1.6.4:
+  registry.npm.taobao.org/pnp-webpack-plugin/1.6.4_typescript@4.1.3:
     dependencies:
-      ts-pnp: registry.npm.taobao.org/ts-pnp/1.2.0
+      ts-pnp: registry.npm.taobao.org/ts-pnp/1.2.0_typescript@4.1.3
     dev: false
     engines:
       node: '>=6'
+    id: registry.npm.taobao.org/pnp-webpack-plugin/1.6.4
     name: pnp-webpack-plugin
+    peerDependencies:
+      typescript: '*'
     resolution:
       integrity: sha1-yXEaxNxIpoXauvyG+Lbdn434QUk=
       registry: 'https://r.npm.taobao.org/'
@@ -9820,6 +9806,27 @@ packages:
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/readdirp/download/readdirp-3.5.0.tgz'
     version: 3.5.0
+  registry.npm.taobao.org/recoil/0.1.2_react-dom@17.0.1+react@17.0.1:
+    dependencies:
+      react: registry.npm.taobao.org/react/17.0.1
+      react-dom: registry.npm.taobao.org/react-dom/17.0.1_react@17.0.1
+    dev: false
+    id: registry.npm.taobao.org/recoil/0.1.2
+    name: recoil
+    peerDependencies:
+      react: ^16.13.1
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    resolution:
+      integrity: sha1-hExhL1NYJtvlTJd3YaZ97Rb20GM=
+      registry: 'https://r.npm.taobao.org/'
+      tarball: 'https://registry.npm.taobao.org/recoil/download/recoil-0.1.2.tgz'
+    version: 0.1.2
   registry.npm.taobao.org/regenerate-unicode-properties/8.2.0:
     dependencies:
       regenerate: registry.npm.taobao.org/regenerate/1.4.2
@@ -11643,11 +11650,19 @@ packages:
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/traverse/download/traverse-0.6.6.tgz'
     version: 0.6.6
-  registry.npm.taobao.org/ts-pnp/1.2.0:
+  registry.npm.taobao.org/ts-pnp/1.2.0_typescript@4.1.3:
+    dependencies:
+      typescript: registry.npm.taobao.org/typescript/4.1.3
     dev: false
     engines:
       node: '>=6'
+    id: registry.npm.taobao.org/ts-pnp/1.2.0
     name: ts-pnp
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
     resolution:
       integrity: sha1-pQCtCEsHmPHDBxrzkeZZEshrypI=
       registry: 'https://r.npm.taobao.org/'
@@ -11682,20 +11697,6 @@ packages:
       registry: 'https://r.npm.taobao.org/'
       tarball: 'https://registry.npm.taobao.org/tslib/download/tslib-2.1.0.tgz'
     version: 2.1.0
-  registry.npm.taobao.org/tsutils/3.19.0:
-    dependencies:
-      tslib: registry.npm.taobao.org/tslib/1.14.1
-    dev: false
-    engines:
-      node: '>= 6'
-    name: tsutils
-    peerDependencies:
-      typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
-    resolution:
-      integrity: sha1-k4fLX8txV5qgkJxQlgT4p/vhz/E=
-      registry: 'https://r.npm.taobao.org/'
-      tarball: 'https://registry.npm.taobao.org/tsutils/download/tsutils-3.19.0.tgz'
-    version: 3.19.0
   registry.npm.taobao.org/tsutils/3.19.0_typescript@4.1.3:
     dependencies:
       tslib: registry.npm.taobao.org/tslib/1.14.1
@@ -11796,7 +11797,7 @@ packages:
     resolution:
       integrity: sha1-UZ1YK9lMugz4k0x9joRn5HP1O7c=
       registry: 'https://r.npm.taobao.org/'
-      tarball: 'https://registry.npm.taobao.org/typescript/download/typescript-4.1.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftypescript%2Fdownload%2Ftypescript-4.1.3.tgz'
+      tarball: 'https://registry.npm.taobao.org/typescript/download/typescript-4.1.3.tgz?cache=0&sync_timestamp=1611647384255&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftypescript%2Fdownload%2Ftypescript-4.1.3.tgz'
     version: 4.1.3
   registry.npm.taobao.org/ua-parser-js/0.7.23:
     dev: false
@@ -12333,6 +12334,11 @@ packages:
     peerDependencies:
       bufferutil: ^4.0.1
       utf-8-validate: ^5.0.2
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
     resolution:
       integrity: sha1-eCEABI5U6zb+mEM2OrHGhnKyYd0=
       registry: 'https://r.npm.taobao.org/'
@@ -12486,21 +12492,24 @@ packages:
 registry: ''
 specifiers:
   '@material-ui/core': ~4.11.2
+  '@material-ui/icons': ~4.11.2
   '@rush-temp/html-templates': 'file:./projects/html-templates.tgz'
-  '@rush-temp/my-monorepo': 'file:./projects/my-monorepo.tgz'
   '@rush-temp/toutiao-lite-web': 'file:./projects/toutiao-lite-web.tgz'
   '@svgr/webpack': ~5.5.0
   '@types/node': ^14
   '@types/react': ^17
-  '@types/styled-components': ~5.1.7
   '@typescript-eslint/eslint-plugin': ~4.12.0
   '@typescript-eslint/parser': ~4.12.0
+  dayjs: ~1.10.4
   eslint: ~7.17.0
   eslint-config-react-app: ~6.0.0
   eslint-plugin-import: ~2.22.1
+  immer: ~8.0.0
   lite-server: '*'
   next: ^10.0.0
   prettier: ~2.2.1
   react: 17.0.1
   react-dom: 17.0.1
+  recoil: ~0.1.2
   tslib: ~2.1.0
+  typescript: ~4.1.3

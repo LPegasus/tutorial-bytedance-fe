@@ -354,10 +354,6 @@
       "projectFolder": "apps/toutiao-lite-web"
     },
     {
-      "packageName": "my-monorepo",
-      "projectFolder": "."
-    },
-    {
       "packageName": "html-templates",
       "projectFolder": "apps/html-templates"
     }

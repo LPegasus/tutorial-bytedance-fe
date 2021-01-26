@@ -1,0 +1,161 @@
+{
+	"React.FunctionComponent Skeleton": {
+		"prefix": "rfc",
+		"body": [
+			"export function ${1:MyComponent}(props: ${1:MyComponent}PropsType) {",
+			"  ${2:// TODO:}",
+			"}",
+			"",
+			"export type ${1:MyComponent}PropsType = {};",
+		],
+		"description": "React.Component"
+	},
+	"React.MemoComponent Skeleton": {
+		"prefix": "rmc",
+		"body": [
+			"import { memo } from 'react';",
+			"",
+			"export function ${1:MyComponent}(props: ${1:MyComponent}PropsType) {",
+			"  ${2:// TODO:}",
+			"}",
+			"",
+			"export const Memoized${1:MyComponent} = memo(${1:MyComponent});",
+			"",
+			"export type ${1:MyComponent}PropsType = {};"
+		],
+		"description": "React.StatelessComponent"
+	},
+	"React.StatefulComponent Skeleton": {
+		"prefix": "rsc",
+		"body": [
+			"import { useState } from 'react';",
+			"import { produce } from 'immer';",
+			"",
+			"const initialState = {",
+			"  count: 0,",
+			"};",
+			"",
+			"const recipe = produce((draft: typeof initialState, action: ActionType) => {",
+			"  const { type, payload } = action;",
+			"  switch (type) {",
+			"    case 'add': {",
+			"      draft.count += payload;",
+			"      break;",
+			"    }",
+			"    case 'minus': {",
+			"      draft.count -= payload;",
+			"      break;",
+			"    }",
+			"    default:",
+			"      break;",
+			"  }",
+			"});",
+			"export function ${1:MyComponent}(props: ${1:MyComponent}PropsType) {",
+			"  const [state, setState] = useState(initialState);",
+			"  const [dispatch] = useState(() => (action: ActionType) =>",
+			"    setState((currentState) => recipe(currentState, action)),",
+			"  );",
+			"  return null;",
+			"}",
+			"",
+			"export type ${1:MyComponent}PropsType = {",
+			"  count: number;",
+			"};",
+			"",
+			"type ActionType =",
+			"  | {",
+			"      type: 'add';",
+			"      payload: number;",
+			"    }",
+			"  | {",
+			"      type: 'minus';",
+			"      payload: number;",
+			"    };",
+			""
+		]
+	},
+	"React.MemoizedStatefulComponent skeleton": {
+		"prefix": [
+			"rmsc"
+		],
+		"body": [
+			"import { memo, useState } from 'react';",
+			"import { produce } from 'immer';",
+			"",
+			"const initialState = {",
+			"  count: 0,",
+			"};",
+			"",
+			"const recipe = produce((draft: typeof initialState, action: ActionType) => {",
+			"  const { type, payload } = action;",
+			"  switch (type) {",
+			"    case 'add': {",
+			"      draft.count += payload;",
+			"      break;",
+			"    }",
+			"    case 'minus': {",
+			"      draft.count -= payload;",
+			"      break;",
+			"    }",
+			"    default:",
+			"      break;",
+			"  }",
+			"});",
+			"function ${1:MyComponent}(props: ${1:MyComponent}PropsType) {",
+			"  const [state, setState] = useState(initialState);",
+			"  const [dispatch] = useState(() => (action: ActionType) =>",
+			"    setState((currentState) => recipe(currentState, action)),",
+			"  );",
+			"  return null;",
+			"}",
+			"",
+			"export const Memoized${1:MyComponent} = memo(${1:MyComponent});",
+			"",
+			"export type ${1:MyComponent}PropsType = {",
+			"  count: number;",
+			"};",
+			"",
+			"type ActionType =",
+			"  | {",
+			"      type: 'add';",
+			"      payload: number;",
+			"    }",
+			"  | {",
+			"      type: 'minus';",
+			"      payload: number;",
+			"    };",
+			""
+		]
+	},
+	"React Hooks useEffect skeleton": {
+		"prefix": "hook effect",
+		"body": [
+			"/* EFFECT: ${1:effect 作用} */",
+			"useEffect(() => {",
+			"  ${2:// Do something}",
+			"}, []);"
+		]
+	},
+	"React Hooks useState skeleton": {
+		"prefix": "hook state",
+		"body": [
+			"const [${1:state}, set${2:State}] = useState(() => ${3:initialState});"
+		]
+	},
+	"React Hooks useMemo skeleton": {
+		"prefix": "hook memo",
+		"body": [
+			"const ${1:value} = useMemo(() => {",
+			"  ${2:return null;}",
+			"}, []);",
+		]
+	},
+	"React Hooks useCallback skeleton": {
+		"prefix": "hook callback",
+		"body": [
+			"const ${1:fn} = useCallback(() => {",
+			"  ${2:// Do someting}",
+			"}, []);"
+		]
+	}
+}
