@@ -1,0 +1,9 @@
+{
+  "name": "@sjtu-fe/configs",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "@types/react": "17.0.0",
+    "@types/node": "^14.14.22"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "@sjtu-fe/react-components",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  }
+}

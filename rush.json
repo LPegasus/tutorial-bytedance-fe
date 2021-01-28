@@ -350,12 +350,24 @@
    */
   "projects": [
     {
-      "packageName": "toutiao-lite-web",
+      "packageName": "@sjtu-fe/toutiao-lite-web",
       "projectFolder": "apps/toutiao-lite-web"
     },
     {
-      "packageName": "html-templates",
+      "packageName": "@sjtu-fe/html-templates",
       "projectFolder": "apps/html-templates"
+    },
+    {
+      "packageName": "@sjtu-fe/utility",
+      "projectFolder": "libraries/utility"
+    },
+    {
+      "packageName": "@sjtu-fe/react-components",
+      "projectFolder": "libraries/react-components"
+    },
+    {
+      "packageName": "@sjtu-fe/configs",
+      "projectFolder": "libraries/configs"
     }
     // {
     //   /**

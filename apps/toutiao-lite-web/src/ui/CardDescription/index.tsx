@@ -9,7 +9,7 @@ const useStyles = makeStyles(
         height: 12,
         width: '100%',
         '& text': {
-          fill: theme.palette.primary.main,
+          fill: theme.palette.grey[400],
         },
       },
     };
@@ -29,7 +29,7 @@ export function CardDescription(props: CardDescriptionPropsType) {
   const { text } = props;
   return (
     <svg className={classes.root}>
-      <text font-size="10" y="10">
+      <text fontSize="10" y="10">
         {text}
       </text>
     </svg>

@@ -75,7 +75,7 @@ export function AppBar() {
             <SearchIcon />
           </div>
           <InputBase
-            placeholder="Search…"
+            placeholder="这里会有些热搜展示"
             classes={{
               root: classes.inputRoot,
               input: classes.inputInput,

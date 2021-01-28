@@ -1,0 +1,17 @@
+{
+  "name": "@sjtu-fe/utility",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "module": "./es/index.js",
+  "exports": {
+    "default": "./es/index.js"
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.json"
+  },
+  "typings": "./es/index.d.ts",
+  "dependencies": {
+    "dayjs": "~1.10.4"
+  }
+}

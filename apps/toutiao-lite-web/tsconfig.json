@@ -1,38 +1,17 @@
 {
+  "extends": "@sjtu-fe/configs/tsconfig/react.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "importHelpers": true,
-    "importsNotUsedAsValues": "error",
-    "jsx": "preserve",
-    "target": "ESNext",
-    "allowJs": false,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noImplicitAny": false,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
     "paths": {
       "@src/*": ["src/*"],
       "@pages/*": ["./pages/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["**/node_modules", "**/.*"],
+  "references": [
+    {
+      "path": "../../libraries/utility/tsconfig.json"
+    }
   ]
 }

@@ -1,7 +1,23 @@
 {
   "singleQuote": true,
   "tabWidth": 2,
-  "trailingComma": "es5",
   "endOfLine": "lf",
-  "parser": "typescript"
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "singleQuote": false,
+        "parser": "json"
+      }
+    },
+    {
+      "files": ["*.js", "*.ts", "*.tsx"],
+      "options": {
+        "parser": "typescript",
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 80
+      }
+    }
+  ]
 }

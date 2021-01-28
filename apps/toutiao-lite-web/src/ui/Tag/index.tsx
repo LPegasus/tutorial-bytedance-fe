@@ -39,7 +39,7 @@ export function Tag(props: TagPropsType) {
       viewBox="0 0 78 40"
     >
       <rect x="3" y="1" rx="6" width="74" height="38" />
-      <text font-size="25" x="15" y="29">
+      <text fontSize="25" x="15" y="29">
         {text}
       </text>
     </svg>

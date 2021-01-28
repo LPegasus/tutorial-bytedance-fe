@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "outDir": "./es",
+    "allowJs": false,
+    "target": "ES2020",
+    "module": "ES2020",
+    "composite": true,
+    "moduleResolution": "node",
+    "tsBuildInfoFile": "es/.tsbuildinfo",
+    "strict": true,
+    "strictFunctionTypes": false,
+    "charset": "utf8",
+    "declaration": true,
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "rootDir": "src"
+  },
+  "include": ["src"]
+}
