@@ -1,5 +1,11 @@
 import { makeStyles } from '@material-ui/core';
+
 import type { Theme } from '@material-ui/core';
+
+/**
+ * 三图卡片的图片间隔，单位 px
+ */
+const MULTI_PIC_LIST_GAP = 1;
 
 export const useCardStyles = makeStyles<Theme>((theme) => {
   const s1 = theme.spacing(1);
@@ -30,7 +36,7 @@ export const useCardStyles = makeStyles<Theme>((theme) => {
     title: {
       fontSize: '1rem',
       color: theme.palette.grey[900],
-      margin: `${s05}px 0`,
+      margin: `${s05}px ${s05}px ${s05}px 0`,
       fontWeight: 400,
       letterSpacing: '0.5pt',
       webkitLineClamp: 3,
@@ -41,8 +47,8 @@ export const useCardStyles = makeStyles<Theme>((theme) => {
     },
     content: {
       maxWidth: '100%',
-      padding: `${s05}px 0`,
       flex: '1 0 66%',
+      boxSizing: 'border-box',
       display: 'flex',
       justifyContent: 'center',
       flexDirection: 'column',
@@ -69,15 +75,18 @@ export const useCardStyles = makeStyles<Theme>((theme) => {
       },
     },
     picList: {
+      borderRadius: '4px',
+      overflow: 'hidden',
+      marginBottom: `${s05}px`,
+      marginLeft: `-${MULTI_PIC_LIST_GAP}px`,
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'nowrap',
       justifyContent: 'center',
-      overflow: 'visible',
-      width: 'calc(100% + 2px)',
+      width: `calc(100% + ${2 * MULTI_PIC_LIST_GAP}px)`,
       '&>div': {
         flex: 1,
-        padding: '0 1px',
+        padding: `0 ${MULTI_PIC_LIST_GAP}px`,
         width: '33.33%',
         paddingTop: 'calc(33.33% * 0.75)',
         position: 'relative',
@@ -85,9 +94,9 @@ export const useCardStyles = makeStyles<Theme>((theme) => {
           objectFit: 'cover',
           objectPosition: 'center',
           position: 'absolute',
-          left: 1,
-          right: 1,
-          width: 'calc(100% - 2px)',
+          left: MULTI_PIC_LIST_GAP,
+          right: MULTI_PIC_LIST_GAP,
+          width: `calc(100% - ${2 * MULTI_PIC_LIST_GAP}px)`,
           height: '100%',
           top: 0,
         },
@@ -101,13 +110,14 @@ export const useCardStyles = makeStyles<Theme>((theme) => {
       },
     },
     bannerPic: {
-      marginLeft: theme.spacing(0.75),
       width: '100%',
       '&>div': {
         position: 'relative',
         width: '100%',
-        paddingTop: '60%',
+        marginBottom: `${s05}px`,
+        paddingTop: '50%',
         '&>img': {
+          borderRadius: '4px',
           position: 'absolute',
           top: 0,
           left: 0,
@@ -118,9 +128,5 @@ export const useCardStyles = makeStyles<Theme>((theme) => {
         },
       },
     },
-  };
-});
-
-export const useOnePicStyles = makeStyles((theme) => {
-  return;
+  } as const;
 });

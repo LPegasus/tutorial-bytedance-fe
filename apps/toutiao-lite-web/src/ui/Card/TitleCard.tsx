@@ -1,9 +1,9 @@
-import { useRouter } from 'next/router';
-
 import { makeStyles, Theme } from '@material-ui/core';
 import { humanizeCommentsCount, humanizePublishedAt } from '@sjtu-fe/utility';
 import { CardDescription } from '@src/ui/CardDescription';
 import { Tag } from '@src/ui/Tag';
+
+import { CardContainer } from './CardContainer';
 
 import type { CardEntity } from './type';
 
@@ -76,34 +76,21 @@ export function TitleCard(props: TitleCardPropsType) {
     data: { id, title, isPinTop = false, publishedAt, author, commentsCount },
   } = props;
   const classes = useStyles(props);
-  const router = useRouter();
 
   return (
-    <section className={classes.root}>
-      <a
-        href={`/detail/${id}`}
-        className={classes.anchor}
-        onClick={(e) => {
-          e.preventDefault();
-          const href = e.currentTarget.href;
-          router.push(href);
-        }}
-      >
-        <div className={classes.detail}>
-          <div className={classes.content}>
-            <h3 className={classes.title}>{title}</h3>
-            <div className={classes.desc}>
-              {isPinTop && <Tag text="置顶" />}
-              <CardDescription
-                text={`${author} 评论 ${humanizeCommentsCount(
-                  commentsCount
-                )} ${humanizePublishedAt(publishedAt)}`}
-              />
-            </div>
-          </div>
+    <CardContainer id={id} classes={classes}>
+      <div className={classes.content}>
+        <h3 className={classes.title}>{title}</h3>
+        <div className={classes.desc}>
+          {isPinTop && <Tag text="置顶" />}
+          <CardDescription
+            text={`${author} 评论 ${humanizeCommentsCount(
+              commentsCount
+            )} ${humanizePublishedAt(publishedAt)}`}
+          />
         </div>
-      </a>
-    </section>
+      </div>
+    </CardContainer>
   );
 }
 

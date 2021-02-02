@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { memo } from 'react';
 
 import { humanizeCommentsCount, humanizePublishedAt } from '@sjtu-fe/utility';
@@ -8,12 +9,8 @@ import { CardContainer } from './CardContainer';
 import { useCardStyles } from './useCardStyles';
 
 import type { CardEntity } from './type';
-/**
- * 右侧一张图的卡片组件
- *
- * @param props
- */
-export function OnePicCard(props: OnePicCardPropsType) {
+
+export function MultiPicCard(props: MultiPicCardPropsType) {
   const {
     data: {
       id,
@@ -29,8 +26,17 @@ export function OnePicCard(props: OnePicCardPropsType) {
 
   return (
     <CardContainer id={id}>
-      <div className={classes.content}>
+      <div>
         <h3 className={classes.title}>{title}</h3>
+        <div className={classes.picList}>
+          {imgUrls.map((src, i) => {
+            return (
+              <div key={String(i)}>
+                <img src={src} title="" />
+              </div>
+            );
+          })}
+        </div>
         <div className={classes.desc}>
           {isPinTop && <Tag text="置顶" />}
           <CardDescription
@@ -40,26 +46,18 @@ export function OnePicCard(props: OnePicCardPropsType) {
           />
         </div>
       </div>
-      {imgUrls?.[0] && (
-        <div className={classes.pic}>
-          <div>
-            <img src={imgUrls[0]} />
-          </div>
-        </div>
-      )}
     </CardContainer>
   );
 }
 
 /**
- * 右侧一张图的卡片组件
+ * 三图卡片
  *
  * @memoized
- * @param props
  */
-export const MemoizedOnePicCard = memo(OnePicCard);
+export const MemoizedMultiPicCard = memo(MultiPicCard);
 
-export type OnePicCardPropsType = {
+export type MultiPicCardPropsType = {
   /** 卡片数据 */
   data: CardEntity;
 };

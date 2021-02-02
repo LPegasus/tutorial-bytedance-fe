@@ -15,6 +15,7 @@ const useStyles = makeStyles(
       },
     },
     wrapper: {
+      boxShadow: '0 0 2px rgba(0, 0, 0, 0.15)',
       position: 'fixed',
       left: 0,
       paddingBottom: 14,
@@ -38,8 +39,9 @@ export function BottomBar() {
         return 'feeds';
       case router.pathname.startsWith('/me'):
         return 'me';
+      case router.pathname === '':
       default:
-        return 'home';
+        return '';
     }
   }, [router.pathname]);
 
@@ -55,8 +57,8 @@ export function BottomBar() {
       <BottomNavigationAction
         className={classes.label}
         label="头条"
-        value="home"
-        icon={channel === 'home' ? <Home /> : <HomeOutlined />}
+        value=""
+        icon={channel === '' ? <Home /> : <HomeOutlined />}
       />
       <BottomNavigationAction
         className={classes.label}

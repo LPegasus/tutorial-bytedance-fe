@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello React</title>
+  <script src="https://unpkg.pstatp.com/react/17.0.1/umd/react.production.min.js"></script>
+  <script src="https://unpkg.pstatp.com/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/javascript">
+    function CountButton() {
+      const [count, setCount] = React.useState(0);
+      const onClick = () => setCount(count + 1);
+      return React.createElement('button', {
+        children: count, onClick, style: {
+          backgroundColor: '#333',
+          color: '#EFEFEF',
+          border: 'none',
+          padding: '6px 0',
+          width: 50
+        }
+      });
+    }
+
+    ReactDOM.render(
+      React.createElement(CountButton),
+      document.getElementById('root')
+    );
+
+  </script>
+</body>
+
+</html>
