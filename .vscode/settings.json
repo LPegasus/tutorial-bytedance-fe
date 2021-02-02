@@ -1,11 +1,5 @@
 {
   "typescript.locale": "zh-CN",
-  "typescript.tsdk": "../node_modules/typescript/lib/tsserver.js",
-  "cSpell.words": [
-    "immer",
-    "sjtu",
-    "svgr",
-    "toutiao",
-    "tsbuildinfo"
-  ]
+  "typescript.tsdk": "common/temp/node_modules/typescript/lib",
+  "cSpell.words": ["immer", "sjtu", "svgr", "toutiao", "tsbuildinfo"]
 }
