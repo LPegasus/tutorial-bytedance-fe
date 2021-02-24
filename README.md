@@ -17,3 +17,7 @@ rush install --to @sjtu-fe/toutiao-lite-web
 ```shell
 cd apps/toutiao-lite-web && rushx dev
 ```
+
+## Step 4 安装 vscode 插件
+
+打开 vscode 根据右下角提示安装插件

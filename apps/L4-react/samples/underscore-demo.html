@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>update page by underscore</title>
+  <script src="https://unpkg.pstatp.com/underscore/1.12.0/underscore.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/javascript">
+    (function () {
+      // L4-react 运行 rushx start
+      // 打开 http://localhost:8000/samples/underscore-demo.html
+      const tpl = _.template('<button id="btn-1" style="background-color: #333; color: #EFEFEF; border: none; padding: 6px 0; width: 50px;"><%= count%></button>');
+      const root = document.querySelector('#root');
+      const render = (count) => {
+        const html = tpl({ count });
+        root.innerHTML = html;
+      }
+
+      let count = 0;
+      document.body.addEventListener('click', function (evt) {
+        render(++count);
+      });
+
+      render(count);
+    })();
+  </script>
+</body>
+
+</html>

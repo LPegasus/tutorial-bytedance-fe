@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "auchenberg.vscode-browser-preview",
+    "streetsidesoftware.code-spell-checker",
+    "alefragnani.Bookmarks",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "cssho.vscode-svgviewer",
+    "bengreenier.vscode-node-readme"
+  ]
+}

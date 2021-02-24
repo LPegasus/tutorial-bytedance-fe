@@ -1,4 +1,10 @@
 {
   "name": "@sjtu-fe/lesson-4-react",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "*"
+  }
 }
