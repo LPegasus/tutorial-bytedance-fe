@@ -3,7 +3,10 @@
   "compilerOptions": {
     "target": "es5",
     "baseUrl": "src",
-    "types": ["byted-react-scripts"]
+    "types": ["byted-react-scripts"],
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": ["src"],
   "references": [
