@@ -1,0 +1,47 @@
+{
+  "name": "@sjtu-fe/lesson-4-react-homework",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "byted-react-scripts build",
+    "eject": "byted-react-scripts eject",
+    "start": "byted-react-scripts start",
+    "test": "byted-react-scripts test"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "@sjtu-fe/eslint-config",
+    "root": true
+  },
+  "dependencies": {
+    "@sjtu-fe/configs": "workspace:*",
+    "@sjtu-fe/eslint-config": "workspace:*",
+    "@sjtu-fe/react-components": "workspace:*",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "byted-react-scripts": "^5.0.0",
+    "lottie-web": "^5.7.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "recoil": "^0.1.2",
+    "rxjs": "^6.6.6",
+    "styled-components": "^5.2.1",
+    "typescript": "~4.2.2",
+    "typescript-plugin-styled-components": "^1.4.4",
+    "web-vitals": "^1.1.0",
+    "tslib": "^2.1.0",
+    "react-refresh": "^0.9.0"
+  }
+}

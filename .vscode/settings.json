@@ -1,5 +1,12 @@
 {
   "typescript.locale": "zh-CN",
   "typescript.tsdk": "common/temp/node_modules/typescript/lib",
-  "cSpell.words": ["immer", "sjtu", "svgr", "toutiao", "tsbuildinfo"]
+  "cSpell.words": ["immer", "sjtu", "svgr", "toutiao", "tsbuildinfo"],
+  "files.associations": {
+    "*.json": "jsonc",
+    "package.json": "json"
+  },
+  "eslint.packageManager": "pnpm",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.disableAutomaticTypeAcquisition": false
 }

@@ -2,8 +2,26 @@
   "name": "@sjtu-fe/react-components",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "build": "tsc -b tsconfig.json"
+  },
+  "module": "./es/index.js",
+  "typings": "./es/index.d.ts",
   "dependencies": {
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "lottie-web": "^5.7.6",
+    "tslib": "^2.1.0"
+  },
+  "eslintConfig": {
+    "extends": "@sjtu-fe/eslint-config",
+    "root": true
+  },
+  "devDependencies": {
+    "@sjtu-fe/eslint-config": "workspace:*",
+    "@sjtu-fe/configs": "workspace:*",
+    "typescript": "^4.2.2",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1"
   }
 }

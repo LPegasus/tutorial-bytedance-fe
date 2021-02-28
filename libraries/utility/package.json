@@ -10,8 +10,15 @@
   "scripts": {
     "build": "tsc -b tsconfig.json"
   },
+  "eslintConfig": {
+    "extends": "@sjtu-fe/eslint-config",
+    "root": true
+  },
   "typings": "./es/index.d.ts",
   "dependencies": {
     "dayjs": "~1.10.4"
+  },
+  "devDependencies": {
+    "@sjtu-fe/eslint-config": "workspace:*"
   }
 }

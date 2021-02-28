@@ -1,0 +1,14 @@
+{
+  "extends": "@sjtu-fe/configs/tsconfig/react.json",
+  "compilerOptions": {
+    "target": "es5",
+    "baseUrl": "src",
+    "types": ["byted-react-scripts"]
+  },
+  "include": ["src"],
+  "references": [
+    {
+      "path": "../../libraries/react-components/tsconfig.json"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@sjtu-fe/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.js",
+  "devDependencies": {
+    "eslint-config-react-app": "~6.0.0",
+    "@typescript-eslint/eslint-plugin": "~4.15.2"
+  },
+  "dependencies": {
+    "@rushstack/eslint-patch": "~1.0.6"
+  }
+}

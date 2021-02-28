@@ -371,7 +371,15 @@
     },
     {
       "packageName": "@sjtu-fe/lesson-4-react",
-      "projectFolder": "apps/L4-react"
+      "projectFolder": "apps/lesson-4-react"
+    },
+    {
+      "packageName": "@sjtu-fe/lesson-4-react-homework",
+      "projectFolder": "apps/lesson-4-react-homework"
+    },
+    {
+      "packageName": "@sjtu-fe/eslint-config",
+      "projectFolder": "libraries/eslint-config"
     }
     // {
     //   /**

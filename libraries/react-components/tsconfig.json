@@ -1,0 +1,16 @@
+{
+  "extends": "@sjtu-fe/configs/tsconfig/react.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "baseUrl": "node_modules",
+    "declaration": true,
+    "jsx": "react",
+    "tsBuildInfoFile": "es/.tsbuildinfo",
+    "composite": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "outDir": "es",
+    "rootDir": "./src"
+  },
+  "include": ["src"]
+}

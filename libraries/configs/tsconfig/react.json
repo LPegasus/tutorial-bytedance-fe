@@ -11,7 +11,6 @@
     "allowJs": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": false,
