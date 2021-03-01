@@ -7,7 +7,9 @@ export interface KoopaPropsType {
 }
 
 export function Koopa(props: KoopaPropsType) {
-  const { className, style } = props;
-
-  return <div></div>;
+  return (
+    <div {...props}>
+      <img alt="" src={KoopaPng} />
+    </div>
+  );
 }

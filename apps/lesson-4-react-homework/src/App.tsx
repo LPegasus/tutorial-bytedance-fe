@@ -1,6 +1,7 @@
 import './App.css';
 
-import React from 'react';
+import { Koopa } from '@/components/Koopa';
+
 import { Mario } from './components/Mario';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <section>
         <Mario />
+        <Koopa />
       </section>
     </div>
   );
