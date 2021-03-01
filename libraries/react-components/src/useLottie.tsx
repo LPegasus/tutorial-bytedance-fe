@@ -1,15 +1,24 @@
-import lottie, { AnimationItem } from 'lottie-web';
+import lottie, {
+  AnimationItem,
+  CanvasRendererConfig,
+  HTMLRendererConfig,
+  SVGRendererConfig,
+} from 'lottie-web';
 import React, { CSSProperties, useEffect, useRef } from 'react';
 
 import { useEventCallback } from './useEventCallback';
 
-interface UseLottiePropsType {
+export interface UseLottiePropsType {
   autoplay?: boolean;
   loop?: boolean;
   renderer?: 'svg' | 'canvas';
   animationData: any;
   style?: CSSProperties;
   className?: string;
+  rendererSettings?:
+    | SVGRendererConfig
+    | CanvasRendererConfig
+    | HTMLRendererConfig;
   withRef?: (animationItem: AnimationItem | null) => void;
 }
 

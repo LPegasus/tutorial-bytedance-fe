@@ -1,0 +1,25 @@
+{
+  "name": "@sjtu-fe/github-scanner",
+  "version": "0.0.1",
+  "description": "github 查询工具",
+  "main": "lib/index.js",
+  "bin": "lib/index.js",
+  "files": ["lib"],
+  "scripts": {
+    "build": "rimraf && tsc -b",
+    "start": "tsc -b -w"
+  },
+  "dependencies": {
+    "@rushstack/node-core-library": "^3.36.0",
+    "@rushstack/ts-command-line": "^4.7.8",
+    "axios": "^0.21.1",
+    "dayjs": "~1.10.4",
+    "ora": "~5.3.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.0",
+    "@types/node": "^14",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.2.2"
+  }
+}

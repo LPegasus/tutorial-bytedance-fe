@@ -4,6 +4,7 @@
     "target": "es5",
     "baseUrl": "src",
     "types": ["byted-react-scripts"],
+    "jsx": "react-jsx",
     "paths": {
       "@/*": ["./*"]
     }

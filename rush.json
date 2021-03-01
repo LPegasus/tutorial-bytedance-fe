@@ -350,6 +350,10 @@
    */
   "projects": [
     {
+      "packageName": "@sjtu-fe/github-scanner",
+      "projectFolder": "apps/github-scanner"
+    },
+    {
       "packageName": "@sjtu-fe/toutiao-lite-web",
       "projectFolder": "apps/toutiao-lite-web"
     },

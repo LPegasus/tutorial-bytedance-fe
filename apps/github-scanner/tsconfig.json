@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "@tsconfig/node14/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "node_modules",
+    "rootDir": "src",
+    "outDir": "lib",
+    "declaration": true,
+    "composite": true,
+    "tsBuildInfoFile": "lib/.tsbuildinfo"
+  },
+  "include": ["src"]
+}
