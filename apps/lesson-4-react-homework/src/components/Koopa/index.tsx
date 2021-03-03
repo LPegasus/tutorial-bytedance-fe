@@ -1,4 +1,5 @@
-import type { CSSProperties } from '@/../../../libraries/react-components/node_modules/@types/react';
+import type { CSSProperties } from 'react';
+import React from 'react';
 import KoopaPng from '@/assets/png/kbw.png';
 
 export interface KoopaPropsType {
@@ -6,10 +7,13 @@ export interface KoopaPropsType {
   className?: string;
 }
 
-export function Koopa(props: KoopaPropsType) {
+export const Koopa = React.forwardRef(function Koopa(
+  props: KoopaPropsType,
+  ref: React.Ref<HTMLDivElement>
+) {
   return (
-    <div {...props}>
-      <img alt="" src={KoopaPng} />
+    <div {...props} ref={ref}>
+      <img width="100%" alt="" src={KoopaPng} />
     </div>
   );
-}
+});

@@ -47,7 +47,7 @@ export function useLottie(props: UseLottiePropsType) {
       animationItem.destroy();
       withRefCallback(null);
     };
-  }, [lottieProps, withRefCallback]);
+  }, [withRefCallback]); // eslint-disable-line
 
   return <div style={style} className={className} ref={containerRef} />;
 }

@@ -7,6 +7,8 @@ import { useLottie } from '@sjtu-fe/react-components';
 
 const initialOffsetY = '30px';
 
+export const MemoMario = React.memo(Mario);
+
 export function Mario() {
   const elm = useLottie({
     animationData,

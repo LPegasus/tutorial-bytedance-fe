@@ -45,11 +45,13 @@ importers:
       '@types/node': registry.npm.taobao.org/@types/node/14.14.31
       '@types/react': registry.npm.taobao.org/@types/react/17.0.2
       '@types/react-dom': registry.npm.taobao.org/@types/react-dom/17.0.1
+      '@types/styled-components': registry.npm.taobao.org/@types/styled-components/5.1.7
       byted-react-scripts: registry.npm.taobao.org/byted-react-scripts/5.0.0_4d5656bf626af552e7dc049bebb30943
       lottie-web: registry.npm.taobao.org/lottie-web/5.7.6
       react: registry.npm.taobao.org/react/17.0.1
       react-dom: registry.npm.taobao.org/react-dom/17.0.1_react@17.0.1
       react-refresh: registry.npm.taobao.org/react-refresh/0.9.0
+      react-spring: registry.npm.taobao.org/react-spring/8.0.27_react-dom@17.0.1+react@17.0.1
       recoil: registry.npm.taobao.org/recoil/0.1.2_react-dom@17.0.1+react@17.0.1
       rxjs: registry.npm.taobao.org/rxjs/6.6.6
       styled-components: registry.npm.taobao.org/styled-components/5.2.1_react-dom@17.0.1+react@17.0.1
@@ -68,11 +70,13 @@ importers:
       '@types/node': ^14
       '@types/react': ^17.0.0
       '@types/react-dom': ^17.0.0
+      '@types/styled-components': ^5.1.7
       byted-react-scripts: ^5.0.0
       lottie-web: ^5.7.6
       react: ^17.0.1
       react-dom: ^17.0.1
       react-refresh: ^0.9.0
+      react-spring: ^8.0.27
       recoil: ^0.1.2
       rxjs: ^6.6.6
       styled-components: ^5.2.1
@@ -3040,7 +3044,7 @@ packages:
     resolution:
       integrity: sha1-zIhqhcBy3x3iNnDcGqWfwRbEAXw=
       registry: https://r.npm.taobao.org/
-      tarball: https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.13.8.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.13.8.tgz
+      tarball: https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.13.8.tgz
     version: 7.13.8
   registry.npm.taobao.org/@babel/template/7.12.13:
     dependencies:
@@ -4367,6 +4371,17 @@ packages:
       registry: https://r.npm.taobao.org/
       tarball: https://registry.npm.taobao.org/@types/graceful-fs/download/@types/graceful-fs-4.1.5.tgz
     version: 4.1.5
+  registry.npm.taobao.org/@types/hoist-non-react-statics/3.3.1:
+    dependencies:
+      '@types/react': registry.npm.taobao.org/@types/react/17.0.2
+      hoist-non-react-statics: registry.npm.taobao.org/hoist-non-react-statics/3.3.2
+    dev: false
+    name: '@types/hoist-non-react-statics'
+    resolution:
+      integrity: sha1-ESSq/lEYy1kZd66xzqrtEHDrA58=
+      registry: https://r.npm.taobao.org/
+      tarball: https://registry.npm.taobao.org/@types/hoist-non-react-statics/download/@types/hoist-non-react-statics-3.3.1.tgz
+    version: 3.3.1
   registry.npm.taobao.org/@types/html-minifier-terser/5.1.1:
     dev: false
     name: '@types/html-minifier-terser'
@@ -4567,6 +4582,18 @@ packages:
       registry: https://r.npm.taobao.org/
       tarball: https://registry.npm.taobao.org/@types/strip-json-comments/download/@types/strip-json-comments-0.0.30.tgz
     version: 0.0.30
+  registry.npm.taobao.org/@types/styled-components/5.1.7:
+    dependencies:
+      '@types/hoist-non-react-statics': registry.npm.taobao.org/@types/hoist-non-react-statics/3.3.1
+      '@types/react': registry.npm.taobao.org/@types/react/17.0.2
+      csstype: registry.npm.taobao.org/csstype/3.0.7
+    dev: false
+    name: '@types/styled-components'
+    resolution:
+      integrity: sha1-PNELCIwcsazeLksWaz6CdaMINxA=
+      registry: https://r.npm.taobao.org/
+      tarball: https://registry.npm.taobao.org/@types/styled-components/download/@types/styled-components-5.1.7.tgz
+    version: 5.1.7
   registry.npm.taobao.org/@types/tapable/1.0.6:
     dev: false
     name: '@types/tapable'
@@ -18064,6 +18091,23 @@ packages:
       registry: https://r.npm.taobao.org/
       tarball: https://registry.npm.taobao.org/react-refresh/download/react-refresh-0.9.0.tgz
     version: 0.9.0
+  registry.npm.taobao.org/react-spring/8.0.27_react-dom@17.0.1+react@17.0.1:
+    dependencies:
+      '@babel/runtime': registry.npm.taobao.org/@babel/runtime/7.13.8
+      prop-types: registry.npm.taobao.org/prop-types/15.7.2
+      react: registry.npm.taobao.org/react/17.0.1
+      react-dom: registry.npm.taobao.org/react-dom/17.0.1_react@17.0.1
+    dev: false
+    id: registry.npm.taobao.org/react-spring/8.0.27
+    name: react-spring
+    peerDependencies:
+      react: '>= 16.8.0'
+      react-dom: '>= 16.8.0'
+    resolution:
+      integrity: sha1-l9Te5nf0Hgsq3LaW84OWgKOqNWo=
+      registry: https://r.npm.taobao.org/
+      tarball: https://registry.npm.taobao.org/react-spring/download/react-spring-8.0.27.tgz
+    version: 8.0.27
   registry.npm.taobao.org/react-transition-group/4.4.1_react-dom@17.0.1+react@17.0.1:
     dependencies:
       '@babel/runtime': registry.npm.taobao.org/@babel/runtime/7.13.8

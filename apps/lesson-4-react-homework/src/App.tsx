@@ -1,16 +1,12 @@
 import './App.css';
 
-import { Koopa } from '@/components/Koopa';
-
-import { Mario } from './components/Mario';
+// import { RunningSection } from '@/components/RunningSection';
+import { Counting } from './components/Counting';
 
 function App() {
   return (
     <div className="App">
-      <section>
-        <Mario />
-        <Koopa />
-      </section>
+      <Counting />
     </div>
   );
 }
