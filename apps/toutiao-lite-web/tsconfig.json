@@ -1,14 +1,27 @@
+/* prettier-ignore */
 {
   "extends": "@sjtu-fe/configs/tsconfig/react.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["src/*"],
-      "@pages/*": ["./pages/*"]
-    }
+      "@src/*": [
+        "src/*"
+      ],
+      "@pages/*": [
+        "./pages/*"
+      ]
+    },
+    "noEmit": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/.*"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/.*"
+  ],
   "references": [
     {
       "path": "../../libraries/utility/tsconfig.json"
