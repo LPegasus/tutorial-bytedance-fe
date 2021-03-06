@@ -7,15 +7,26 @@ npm i pnpm -g  # 安装 pnpm
 pnpm install -g @microsoft/rush eslint  # 用 pnpm 安装 eslint、rush
 ```
 
-## Step 2 安装依赖
+## Step 2 clone 项目并安装依赖
 
 ```shell
+# clone 项目会在命令行所在路径生成 tutorial-bytedance-fe 的目录
+git clone https://github.com/LPegasus/tutorial-bytedance-fe
+
+# cd 到项目目录下
+cd tutorial-bytedance-fe
+
+# 安装依赖
 rush update
 ```
 
 ## Step 3 安装 vscode 插件
 
-打开 vscode 根据右下角提示安装插件
+使用 vscode 打开 workspace.code-workspace 文件
+
+根据右下角提示安装插件，若没有弹出提示，需要手动安装插件。
+
+手动安装插件方法见 Q & A
 
 # 开发指南
 
@@ -134,3 +145,21 @@ rush 是微软开发的服务于 Web 开发人员的 MonoRepo 工具
 ## [pnpm](https://pnpm.js.org/)
 
 pnpm 是 npm 生态下的一种包管理工具。比较出名的还有 [yarn](https://yarnpkg.com/)。pnpm 的特点是快、隐式依赖不可用、软链复用。
+
+# Q & A
+
+## 如何安装 VSCode 插件
+
+1. 打开 workspace.code-workspace 文件，找到下图红框部分配置
+
+   ![required-extensions](./docs/required-extensions.png)
+
+2. 打开 vscode 快捷命令输入框（Windows: `ctrl + shift + p `，Mac: `command + shift + p`）
+
+   输入 `Extensions: install extensions`
+
+   ![VSCode Extensions Panel](./docs/vscode-extensions-panel.png)
+   
+   vscode 侧边栏会切换到插件管理面板
+
+3. 将 1 中的插件名字在插件管理面板搜索框中搜索，并安装。有的插件需要重启 vscode 才会生效。可以全部装完之后再重启 vscode。

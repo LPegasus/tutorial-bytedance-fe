@@ -1,0 +1,30 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "typescript.locale": "en",
+    "typescript.tsdk": "common/temp/node_modules/typescript/lib",
+    "files.associations": {
+      "*.json": "jsonc",
+      "package.json": "json"
+    },
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "typescript.disableAutomaticTypeAcquisition": false
+  },
+  "extensions": {
+    "recommendations": [
+      "auchenberg.vscode-browser-preview",
+      "streetsidesoftware.code-spell-checker",
+      "alefragnani.Bookmarks",
+      "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
+      "esbenp.prettier-vscode",
+      "cssho.vscode-svgviewer",
+      "bengreenier.vscode-node-readme",
+      "christian-kohler.path-intellisense"
+    ]
+  }
+}
