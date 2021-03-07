@@ -18,6 +18,12 @@ cd tutorial-bytedance-fe
 
 # 安装依赖
 rush update
+
+# 启动本地服务，查看效果 toutiao-lite-web 的效果
+cd apps/toutiao-lite-web
+rushx dev
+
+# 打开浏览器访问 http://localhost:3000
 ```
 
 ## Step 3 安装 vscode 插件
