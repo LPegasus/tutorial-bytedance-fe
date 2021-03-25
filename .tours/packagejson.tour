@@ -1,0 +1,41 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "About package.json",
+  "steps": [
+    {
+      "file": "apps/lesson-4-hooks/package.json",
+      "description": "# package.json 入门\r\n\r\npackage.json 是 node.js 模块的配置文件。此教程将介绍课程中需要了解的基础 package.json 知识。",
+      "line": 0
+    },
+    {
+      "file": "apps/lesson-4-hooks/package.json",
+      "description": "# name\r\n> 必填\r\n\r\n描述模块名称，最终发布到 npm registry 上的名称。可以使用 `@` 符号作为开头声明 `scope`。注意不允许使用大写字母。\r\n\r\n比如，著名的 babel 系列，在 v7 版本之后，将所有的包都管理在 `@babel` scope 下发布：\r\n- @babel/core\r\n- @babel/traverse\r\n- @babel/preset-typescript\r\n- @babel/plugin-transform-runtime",
+      "line": 2
+    },
+    {
+      "file": "apps/lesson-4-hooks/package.json",
+      "description": "# version\r\n\r\n> 必填\r\n\r\n指定版本号，最终发布到 npm registry 上时，需要更新。不能重复发布同一个版本号。社区大多数情况下遵循 semver 语义化版本，例如：`1.0.0`。\r\n\r\n假设现在有 `foo@1.0.0`：\r\n\r\n- bugfix：发布 `foo@1.0.1`\r\n- feature：`foo@1.1.0`\r\n- breaking change：`foo@2.0.0`\r\n- beta release：`foo@1.2.0-beta.0`\r\n\r\n> PS：只是个约定，并不强制。比如：TypeScript 就不遵循此约定。",
+      "line": 3
+    },
+    {
+      "file": "apps/lesson-4-hooks/package.json",
+      "description": "# scripts\r\n\r\n> 非必填\r\n\r\nscripts 字段定义了在 package.json 文件所在目录下，执行 `npm run` 可运行的命令。\r\n\r\n比如下面定义了 **build**、**start**、**serve** 等命令，就可以使用 `npm run [build|start|serve]` 来执行声明的脚本。\r\n\r\n通常会定义的命令：\r\n- build：构建产物\r\n- start：开发调试\r\n- test：运行测试用例\r\n\r\n## npm hooks\r\n此外，npm 定义了 scripts 中的某些保留词作为勾子脚本，可以在对应的模块**安装、发布**等阶段执行特定脚本。",
+      "line": 5
+    },
+    {
+      "file": "apps/lesson-4-hooks/package.json",
+      "description": "# dependencies\r\n\r\n> 非必填\r\n\r\ndependencies 和 devDependencies 都是声明需要安装的依赖。在开发模式下，是没有区别的，都会安装。当作为包发布后给别人用时，devDependencies 是不会安装的。\r\n\r\n如果你的源代码用到了某个第三方模块，就把它加到 dependencies 中。比如：\r\n- lodash：常用工具函数\r\n- react：框架代码\r\n\r\n如果你的源代码没有用到，只是在开发时需要，作为工具用，就把它加到 devDependencies 中。比如：\r\n- typescript：代码编译\r\n- eslint：代码格式校验\r\n- webpack：打包工具",
+      "line": 24
+    },
+    {
+      "file": "libraries/react-components/package.json",
+      "description": "# 模块导出文件\r\n\r\n> 必填\r\n\r\n通常情况下，package.json 需要有一个 **main** 的字段作为模块入口文件。\r\n\r\n这里没有使用 **main** 是因为 react 应用一般需要 webpack 作为打包工具才能运行。webpack 对于模块的入口文件优先级是 exports > browser > module > main。\r\n\r\nexports 由于是 Node.js 近期才引入的模块规范，还没有广泛使用，先不用了解。\r\n\r\n社区一般约定，module 字段的入口文件，使用 ESModule 模块规范；main 字段的入口文件，使用 CommonJS 模块规范。这两种规范对于现代化打包工具来说，最大的区别就是 ESModule 可以做 TreeShaking（未使用代码在打包产物中删除），从而减少没有用到的代码出现在产物中。",
+      "line": 8
+    },
+    {
+      "file": "libraries/react-components/package.json",
+      "description": "# 其他工具链的扩展字段\r\n\r\npackage.json 是一个标准 json 格式的文件，出了 npm 用到的字段外，可以自己添加任意 json 数据。\r\n\r\n有相当多的工具包，会将 package.json 中的特定字段，作为工具的配置数据进行存取，以下是常见的几种自定义字段：\r\n- typings|types：typescript 类型系统加载模块类型的入口文件\r\n- eslintConfig：eslint 配置\r\n- browserslist：浏览器兼容性补丁覆盖浏览器的范围",
+      "line": 9
+    }
+  ]
+}
