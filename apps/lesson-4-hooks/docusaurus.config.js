@@ -1,8 +1,8 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'React Tutorial',
+  tagline: '前端课程 React 入门',
+  url: 'https://localhost:3000/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -11,21 +11,26 @@ module.exports = {
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      // title: 'React 入门',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'ByteDance Logo',
+        src: 'img/bytedance.png',
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
+          to: 'docs/getting-started',
+          activeBasePath: 'docs/getting-started',
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          to: 'docs/hooks/summary',
+          label: 'Hooks',
+          position: 'left',
+          activeBasePath: 'docs/hooks',
+        },
+        {
+          href: 'https://github.com/LPegasus/tutorial-bytedance-fe',
           label: 'GitHub',
           position: 'right',
         },
@@ -39,7 +44,7 @@ module.exports = {
           items: [
             {
               label: 'Getting Started',
-              to: 'docs/',
+              to: 'docs/getting-started',
             },
           ],
         },
@@ -64,8 +69,8 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: 'Hooks',
+              to: 'hooks',
             },
             {
               label: 'GitHub',
@@ -76,7 +81,14 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
+    /**
+     * prism code-block highlight
+     */ prism: {
+      theme: require('prism-react-renderer/themes/vsDark'),
+      additionalLanguages: ['typescript'],
+    },
   },
+  themes: ['./playground-theme/index.js'],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -84,14 +96,12 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          editUrl: 'https://github.com/LPegasus/tutorial-bytedance-fe',
         },
-        blog: {
+        hooks: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          editUrl: 'https://github.com/LPegasus/tutorial-bytedance-fe',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

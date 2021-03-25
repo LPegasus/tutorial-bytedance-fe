@@ -1,0 +1,26 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Install eslint + rush",
+  "steps": [
+    {
+      "file": "README.md",
+      "description": "首先，让我们准备一下环境。\n\n>> npm i -g pnpm --force\n\n>> pnpm install -g @microsoft/rush eslint",
+      "line": 5
+    },
+    {
+      "file": "README.md",
+      "description": "将项目克隆到本地\n\n>> git clone https://github.com/LPegasus/tutorial-bytedance-fe\n\n克隆完成后，安装依赖\n\n>> cd tutorial-bytedance-fe\n\n安装依赖\n\n>> rush update\n",
+      "line": 12,
+      "selection": {
+        "start": {
+          "line": 14,
+          "character": 1
+        },
+        "end": {
+          "line": 14,
+          "character": 60
+        }
+      }
+    }
+  ]
+}

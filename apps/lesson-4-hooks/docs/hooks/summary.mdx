@@ -1,0 +1,75 @@
+---
+title: Hooks API
+---
+
+## React Hooks API
+
+`hooks` API 是从 `React@16.8` 开始引入的全新开发模式。
+
+`hooks` 的出现降低了代码量，提供了更细粒度的逻辑拆分和重用能力，使逻辑复用更灵活。但同时，对开发者提出了更高的要求。
+
+## API 简介
+
+### useState
+
+维护组件不可变状态
+
+```typescript live
+function Button() {
+  const [count, setCount] = useState(0);
+  return (
+    <button onClick={() => setCount(count + 1)}>Click Count: {count}</button>
+  );
+}
+```
+
+### useEffect
+
+管理组件副作用，可以实现组件挂载、更新、卸载生命周期时的回调。
+
+```typescript live
+function TimePrinter() {
+  const [visible, setVisible] = useState(false);
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    // 开启计时器
+    if (visible) {
+      const intervalId = setInterval(() => {
+        setCount((s) => s + 1);
+      }, 1000);
+
+      return () => {
+        // 关闭计时器
+        clearInterval(intervalId);
+      };
+    } else {
+      setCount(0);
+    }
+  }, [visible]);
+  return (
+    <div>
+      <button onClick={() => setVisible((s) => !s)}>
+        {visible ? 'hide' : 'show'}
+      </button>
+      <p style={{ opacity: visible ? 1 : 0 }}>{count}</p>
+    </div>
+  );
+}
+```
+
+<TimePrinter />
+
+### useLayoutEffect
+
+与 useEffect 作用类似，但执行实际比 useEffect 早，会在浏览器刷新页面前执行，与最近一次 React 重绘同步执行。
+SSR 时会报错。
+
+### useRef
+
+维护组件的可变状态、获取组件 reference
+
+```typescript live
+function RefDemo() {
+  return <button>Click Me!</button>;
+}
+```

@@ -8,6 +8,7 @@
     "esbenp.prettier-vscode",
     "cssho.vscode-svgviewer",
     "bengreenier.vscode-node-readme",
-    "christian-kohler.path-intellisense"
+    "christian-kohler.path-intellisense",
+    "vsls-contrib.codetour"
   ]
 }
