@@ -388,6 +388,10 @@
     {
       "packageName": "@sjtu-fe/lesson-4-hooks",
       "projectFolder": "apps/lesson-4-hooks"
+    },
+    {
+      "packageName": "@sjtu-fe/lesson-4-cra",
+      "projectFolder": "apps/lesson-4-cra"
     }
     // {
     //   /**
