@@ -22,6 +22,7 @@
     ]
   },
   "dependencies": {
+    "@sjtu-fe/github-scanner": "workspace:*",
     "@babel/standalone": "^7.13.12",
     "@docusaurus/core": "2.0.0-alpha.72",
     "@docusaurus/preset-classic": "2.0.0-alpha.72",

@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./es",
+    "tsBuildInfoFile": "./es/.tsbuildinfo",
+    "module": "ES2020",
+    "moduleResolution": "Node"
+  }
+}

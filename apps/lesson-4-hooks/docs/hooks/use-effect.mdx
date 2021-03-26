@@ -1,0 +1,140 @@
+---
+title: useEffect
+---
+
+`useEffect` 是第二最常用的 hooks
+
+`useEffect` 在浏览器环境才会执行，在服务端环境不会执行
+
+通常 `useEffect` 用来处理 react 的副作用，常见的如：
+
+- 注册监听器
+- 创建计时器
+- 做 _DOM_ 操作
+- _I/O_ 操作
+
+## 绑定事件
+
+```tsx live
+// 实现一个现实滚动条的组件
+return () => {
+  const [scrollPosition, setScrollPosition] = useState('');
+
+  useEffect(() => {
+    const handler = () => {
+      setScrollPosition(
+        `top: ${documentElement.scrollTop}, left: ${documentElement.scrollLeft}`
+      );
+    };
+    const documentElement = document.documentElement;
+    window.addEventListener('scroll', handler, { passive: true });
+    // 关于 passive 的作用，后续的性能优化会讲
+    return () => {
+      window.removeEventListener('scroll', handler);
+    };
+  }, []);
+  return <p>{scrollPosition}</p>;
+};
+```
+
+## state 驱动 DOM 操作
+
+```tsx live
+return () => {
+  const [speed, setSpeed] = useState(1.0);
+  const [volume, setVolume] = useState(1.0);
+  const [loadError, setLoadError] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) {
+      return;
+    }
+    audio.playbackRate = speed;
+  }, [speed]);
+
+  useEffect(() => {
+    const audio = audioRef.current; // 说明为何一定要先取变量
+    audio.onerror = () => {
+      setLoadError(true);
+    };
+    return () => {
+      audio.onerror = null;
+    };
+  }, []);
+
+  return (
+    <>
+      <select value={speed} onChange={(e) => setSpeed(e.target.value)}>
+        <option value={0.5}>0.5</option>
+        <option value={1.0}>1.0</option>
+        <option value={1.5}>1.5</option>
+        <option value={2.0}>2.0</option>
+      </select>
+      {loadError ? (
+        <div>
+          <strong>Music load failed.</strong>
+        </div>
+      ) : (
+        <figure>
+          <figcaption>Music</figcaption>
+          <audio controls src="/audio/music1.flac" ref={audioRef}>
+            Your browser does not support the
+          </audio>
+        </figure>
+      )}
+    </>
+  );
+};
+```
+
+> 练习：尝试添加一个选择器，增加音乐选择功能
+
+## I/O 操作
+
+```tsx live
+return () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // let cancel = false;
+    (async () => {
+      // IIFE
+      const resp = await github.searchUser('LPegasus');
+      setUser(resp);
+    })();
+    // return () => (cancel = true);
+  }, []);
+
+  return (
+    <div>
+      {user && (
+        <fieldset>
+          <legend style={{ width: 'max-content' }}>{user.name}</legend>
+          <div>{new Date(user.createdAt).getFullYear()} 注册 github</div>
+          <div>{user.followers.totalCount}个粉丝</div>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <img
+              style={{ width: 48, borderRadius: '50%', marginRight: 14 }}
+              src={user.avatarUrl}
+            />{' '}
+            头像
+          </div>
+        </fieldset>
+      )}
+      {/*<pre>
+        <code>{JSON.stringify(user, null, '  ')}</code>
+      </pre>*/}
+    </div>
+  );
+};
+```
+
+> 讲解浏览器环境关于异步操作的理解
+> 联系：补充上面代码，添加一个 input 框，搜索不同的 github 账号

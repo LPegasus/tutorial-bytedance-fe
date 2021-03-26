@@ -1,0 +1,104 @@
+---
+title: useContext
+---
+
+## Context 简介
+
+`React.Context` 是设计用来跨组件传递数据用的。我们可以先简单看一下 `React.Context` 的数据结构。
+
+```shell
+node -e "console.log(require('react').createContext({ name: 'foo' }))"
+```
+
+```ts
+{
+  '$$typeof': Symbol(react.context),
+  _calculateChangedBits: null,
+  _currentValue: { name: 'foo' },
+  _currentValue2: { name: 'foo' },
+  _threadCount: 0,
+  Provider: { '$$typeof': Symbol(react.provider), _context: [Circular] },
+  Consumer: {
+    '$$typeof': Symbol(react.context),
+    _context: [Circular *1],
+    _calculateChangedBits: null
+  },
+  _currentRenderer: null,
+  _currentRenderer2: null
+}
+```
+
+> 回到 PPT 页面，转到 Context 运行原理的部分
+
+## Context 的跨组件传递及更新
+
+```tsx live
+const PersonCtx = React.createContext(null);
+
+const Person = () => (
+  <div>
+    <Name />
+    <City />
+    <PersonEditor />
+  </div>
+);
+
+const Name = () => {
+  const {
+    person: { name },
+  } = useContext(PersonCtx);
+
+  return <span>Name: {name}</span>;
+};
+
+const City = () => {
+  const {
+    person: { city },
+  } = useContext(PersonCtx);
+
+  return <span style={{ marginLeft: 16 }}>City: {city}</span>;
+};
+
+const PersonEditor = () => {
+  const { updateName, updateCity, person } = useContext(PersonCtx);
+  return (
+    <div>
+      <div>
+        <input
+          value={person.name}
+          onChange={(e) => updateName(e.target.value)}
+        />
+      </div>
+      <div>
+        <input
+          value={person.city}
+          onChange={(e) => updateCity(e.target.value)}
+        />
+      </div>
+    </div>
+  );
+};
+
+return () => {
+  const [name, setName] = useState('foo');
+  const [city, setCity] = useState('shanghai');
+
+  return (
+    <PersonCtx.Provider
+      value={{
+        person: { name, city },
+        updateName(v: string) {
+          setName(v);
+        },
+        updateCity(v: string) {
+          setCity(v);
+        },
+      }}
+    >
+      <Person />
+    </PersonCtx.Provider>
+  );
+};
+```
+
+> 尝试减少组件重绘的范围

@@ -17,7 +17,7 @@ exports.transform = function customTransform(source) {
      * source 的代码会被 return () 包装，这是 buble 解析的格式，babel 不支持
      * 所以在用 babel 解析前，先拆箱，返回的时候再装箱
      */
-    source.replace(/^return \(/, '').replace(/\)$/, ''),
+    `function Demo() {${source.replace(/^return \(/, '').replace(/\)$/, '')}}`,
     {
       ast: false,
       presets: [
@@ -30,9 +30,9 @@ exports.transform = function customTransform(source) {
           },
         ],
       ],
-    },
+    }
   );
-  return { code: `return (${code})`, map };
+  return { code: `return (${code})() || null`, map };
 };
 
 exports.features = [];

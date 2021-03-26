@@ -1,27 +1,23 @@
 ---
-title: Getting Started
+title: React 从这里开始
 ---
 
-## Step 1: Generate a new Docusaurus site
+## 关于这个站点
 
-If you haven't already, generate a new Docusaurus site using the classic template:
+此站点基于 _facebook_ 的 [Docusaurus](https://docusaurus.io) 搭建
 
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
+站点支持 mdx 文件编写交互式的 react 组件，渲染在页面中
 
-## Step 2: Start your Docusaurus site
+交互示例使用 [react-live](https://github.com/FormidableLabs/react-live) 实现，通过 _webpack_ 替换了底层编译逻辑
 
-Run the development server in the newly created `my-website` folder:
+## 如何运行
 
 ```shell
-cd my-website
+cd apps/lesson-4-hooks
 
-npx docusaurus start
+rushx start
 ```
 
-Open `docs/getting-started.md` and edit some lines. The site reloads automatically and display your changes.
+## 搞定！
 
-## That's it!
-
-Congratulations! You've successfully run and modified your Docusaurus project.
+开始探索 React 吧~ 😃

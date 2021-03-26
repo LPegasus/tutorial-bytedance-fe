@@ -96,8 +96,8 @@ export class SearchUserCommandLineAction extends CommandLineAction {
       } else {
         sb.append(`Login：${outputData.loginName}\n`);
         sb.append(`账号：${outputData.name}\n`);
-        sb.append(`github 地址：${outputData.url}\n`)；
-        sb.append(`website 地址：${outputData.websiteUrl}`)
+        sb.append(`github 地址：${outputData.url}\n`);
+        sb.append(`website 地址：${outputData.websiteUrl}`);
         sb.append(
           `创建日期：${dayjs(outputData.createdAt).format('YYYY/MM/DD')}\n`
         );

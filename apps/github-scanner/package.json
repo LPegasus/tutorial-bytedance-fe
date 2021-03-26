@@ -6,7 +6,8 @@
   "bin": "lib/index.js",
   "files": ["lib"],
   "scripts": {
-    "build": "rimraf && tsc -b",
+    "build": "rimraf lib && tsc -b",
+    "build:es": "rimraf es && tsc -b tsconfig.es.json",
     "start": "tsc -b -w"
   },
   "dependencies": {

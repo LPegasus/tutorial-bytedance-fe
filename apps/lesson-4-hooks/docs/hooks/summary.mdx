@@ -8,26 +8,28 @@ title: Hooks API
 
 `hooks` 的出现降低了代码量，提供了更细粒度的逻辑拆分和重用能力，使逻辑复用更灵活。但同时，对开发者提出了更高的要求。
 
-## API 简介
+## Hooks API 走马观花
 
-### useState
+### [useState](/docs/hooks/use-state)
 
 维护组件不可变状态
 
-```typescript live
+```tsx live
 function Button() {
   const [count, setCount] = useState(0);
   return (
     <button onClick={() => setCount(count + 1)}>Click Count: {count}</button>
   );
 }
+
+return Button;
 ```
 
-### useEffect
+### [useEffect](/docs/hooks/use-effect)
 
 管理组件副作用，可以实现组件挂载、更新、卸载生命周期时的回调。
 
-```typescript live
+```tsx live
 function TimePrinter() {
   const [visible, setVisible] = useState(false);
   const [count, setCount] = useState(0);
@@ -55,9 +57,38 @@ function TimePrinter() {
     </div>
   );
 }
+
+return TimePrinter;
 ```
 
-<TimePrinter />
+### [useContext](/docs/hooks/use-context)
+
+获取当前组件所处 Context 中的值
+
+```tsx live
+const PrimaryColorContext = React.createContext('#333');
+
+function PrimaryButton(props: React.PropsWithChildren<{}>) {
+  const { children } = props;
+  const color = useContext(PrimaryColorContext);
+  return <button style={{ color }}>{children}</button>;
+}
+
+return () => {
+  return (
+    <>
+      <PrimaryButton>Button 1</PrimaryButton>
+      <PrimaryColorContext.Provider value="red">
+        <PrimaryButton>Button 2</PrimaryButton>
+        <PrimaryColorContext.Provider value="blue">
+          <PrimaryButton>Button 3</PrimaryButton>
+        </PrimaryColorContext.Provider>
+        <PrimaryButton>Button 4</PrimaryButton>
+      </PrimaryColorContext.Provider>
+    </>
+  );
+};
+```
 
 ### useLayoutEffect
 
@@ -68,8 +99,177 @@ SSR 时会报错。
 
 维护组件的可变状态、获取组件 reference
 
-```typescript live
-function RefDemo() {
-  return <button>Click Me!</button>;
+```tsx live
+function RefGetDomInstance() {
+  /** 获取 DOM 实例 */
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const [, forceUpdate] = useState();
+
+  useEffect(() => {
+    buttonRef.current.classList.toggle('bg-red');
+  });
+
+  return (
+    <button onClick={forceUpdate} ref={buttonRef}>
+      Click Me!
+    </button>
+  );
 }
+
+return RefGetDomInstance;
 ```
+
+```tsx live
+function RefMutableState() {
+  /** 维护数据实例 */
+  const [count, setCount] = useState(0);
+  const mutableStateRef = useRef(count);
+  mutableStateRef.current = count;
+
+  useEffect(() => {
+    /** 理解闭包变量 */
+    setTimeout(() => {
+      console.log(`mutableState: ${mutableStateRef.current}`);
+      console.log(`count: ${count}`);
+      console.log('');
+    }, 1000);
+  }, [count]);
+
+  return (
+    <button onClick={() => setCount((s) => s + 1)}>
+      Click Count = {count}
+    </button>
+  );
+}
+
+return RefMutableState;
+```
+
+### useMemo | useCallback
+
+一般不需要使用，做性能优化时会用到，配合 `React.memo` 函数，来减少重绘计算。
+
+如果某个计算比较耗时，我们也可以通过 useMemo 来减少计算量。
+
+```tsx {3,4} live
+interface PropsType {
+  /** 密码 */
+  pwd: string;
+  /** 重复密码 */
+  confirmPwd: string;
+  /** 变更回调 */
+  onChange(value: Pick<PropsType, 'pwd' | 'confirmPwd'>): void;
+}
+
+const MemoizedPwdForm = React.memo((props: PropsType) => {
+  const { pwd, confirmPwd, onChange } = props;
+  const containerRef = useRef();
+
+  useEffect(() => {
+    const form = containerRef.current;
+    if (!form) {
+      return;
+    }
+    const animation = form.animate(
+      [
+        { backgroundColor: 'rgba(50, 25, 200, 0.5)' },
+        { backgroundColor: 'rgba(50, 25, 200, 0)' },
+      ],
+      {
+        duration: 500,
+        iterations: 1,
+      }
+    );
+    return () => animation.cancel();
+  });
+  return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+      }}
+      ref={containerRef}
+    >
+      <form action="" style={{ width: '300px' }}>
+        <div className="form-item" autoComplete="off">
+          <input
+            placeholder="密码"
+            type="password"
+            value={pwd}
+            autoComplete="off"
+            required={true}
+            onChange={(e) => {
+              onChange({
+                pwd: e.target.value,
+                confirmPwd,
+              });
+            }}
+          />
+        </div>
+        <div className="form-item">
+          <input
+            placeholder="确认密码"
+            required={true}
+            autoComplete="off"
+            type="password"
+            value={confirmPwd}
+            onChange={(e) => {
+              onChange({
+                pwd,
+                confirmPwd: e.target.value,
+              });
+            }}
+          />
+        </div>
+      </form>
+
+      <h3 style={{ color: '#fff', userSelect: 'none' }}>Re-Render</h3>
+    </div>
+  );
+});
+
+return () => {
+  const [, forceUpdate] = useState({});
+  const [formState, setFormState] = useState({
+    pwd: '',
+    confirmPwd: '',
+  });
+
+  const handleChange = useCallback((v) => {
+    setFormState(v);
+  }, []);
+
+  return (
+    <>
+      <button onClick={forceUpdate}>force update</button>
+
+      <MemoizedPwdForm
+        onChange={handleChange}
+        pwd={formState.pwd}
+        confirmPwd={formState.confirmPwd}
+      />
+
+      <div
+        style={{
+          color: 'red',
+          visibility:
+            formState.pwd && formState.pwd === formState.confirmPwd
+              ? 'hidden'
+              : undefined,
+        }}
+      >
+        Invalid
+      </div>
+    </>
+  );
+};
+```
+
+## 其他不太重要的 API
+
+- useImperativeHandle：配合 `React.forwardRef`，对父组件暴露内部状态，一般用不到
+
+- useReducer：基本用不到，略过
+
+- useDebugValue：配合 React DevTools 使用，打印内部状态用，一般用不到

@@ -4,7 +4,8 @@
   "cSpell.words": ["immer", "sjtu", "svgr", "toutiao", "tsbuildinfo"],
   "files.associations": {
     "*.json": "jsonc",
-    "package.json": "json"
+    "package.json": "json",
+    "*.mdx": "markdown"
   },
   "eslint.packageManager": "pnpm",
   "typescript.enablePromptUseWorkspaceTsdk": true,

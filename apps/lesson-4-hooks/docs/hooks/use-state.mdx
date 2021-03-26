@@ -1,0 +1,176 @@
+---
+title: useState
+---
+
+`useState` 是最常用的 react hooks，所有与画面绘制相关的状态，都应该使用 `useState` 来维护
+
+## 更新 state
+
+设置值的方式有两种
+
+```tsx {5,6} title="更新 state"
+const [count, setCount] = useState(0);
+
+// 触发更新的回调
+const handleClick = () => {
+  setCount(count + 1);
+  setCount((prevCount) => prevCount + 1);
+};
+```
+
+### 注意：所有 set 更新 state 的方法需要保证以下两点：
+
+#### 1. 新 set 的值必须与旧值不等
+
+> 如果值不变，组件不会重绘
+
+#### 2. set 操作不应该出现在组件的同步调用堆栈中
+
+> 调用 setState 会触发组件重绘，又再次执行函数，形成死循环
+
+### 试一试下面的例子
+
+```tsx live
+const labelStyle = {
+  paddingRight: 8,
+  textAlign: 'right',
+  width: 120,
+  display: 'inline-block',
+};
+return () => {
+  const [person, setPerson] = useState({ name: 'foo', age: 18 });
+
+  return (
+    <div>
+      <div>
+        <label style={labelStyle}>name:</label>
+        <input
+          type="text"
+          disabled={true}
+          defaultValue={person.name}
+          placeholder="input name"
+        />
+      </div>
+      <div>
+        <label style={labelStyle}>age:</label>
+        <input
+          onChange={(e) => {
+            const age = Number(e.target.value || '0');
+            if (isNaN(age)) {
+              return;
+            }
+            setPerson((s) => {
+              s.age = age;
+              return s;
+              // return { ...s, age };
+            });
+          }}
+          type="number"
+          pattern="\d*"
+          value={person.age}
+          placeholder="input name"
+        />
+      </div>
+    </div>
+  );
+};
+```
+
+试着修改 age？是不是无法输入？试试用注释的代码来更新。
+
+## 初始化 state
+
+除了将值直接传给 `useState`，当初始化逻辑比较复杂时，我们可以传递函数，函数的返回值作为初始化 `state`
+
+```tsx {4-7}
+// 假设场景：要统计全年的公司流水，流水数据以数组形式通过 props 传递
+const [initialState] = useState(() => {
+  const initialValue = 0;
+  // 耗时操作
+  for (const datum of props.dataSource) {
+    initialValue += props.dataSource.income;
+  }
+  return initialValue;
+});
+```
+
+这段逻辑如果写成下面那样
+
+```tsx
+const initialValue = 0;
+// 耗时操作
+for (const datum of props.dataSource) {
+  initialValue += props.dataSource.income;
+}
+const [initialState] = useState(initialValue);
+```
+
+当 `props` 不变时，两者逻辑是等价的，但想象一下如果 `dataSource` 有 1w 条数据，那么此时组件重绘，下面那种写法又要重新计算 1w 次，性能上是不可接受的。
+
+### 试一试下面的例子
+
+```tsx live
+// 模拟耗时操作
+const _blockTime = (n: number) => {
+  const now = Date.now();
+  while (Date.now() - now < n) {}
+  return;
+};
+function Summary({ dataSource }: { dataSource: Array<{ income: number }> }) {
+  const renderStartRef = useRef<number>(Date.now());
+  renderStartRef.current = Date.now();
+  const spanRef = useRef<HTMLSpanElement>(null);
+
+  // let total = 0;
+  // for (const { income } of dataSource) {
+  //   _blockTime(100);
+  //   total += income;
+  // }
+  // const [sum] = useState(total);
+  const [sum] = useState(() => {
+    let total = 0;
+    for (const { income } of dataSource) {
+      _blockTime(100);
+      total += income;
+    }
+  });
+
+  useLayoutEffect(() => {
+    const renderTime = Date.now() - renderStartRef.current;
+    spanRef.current.innerText = `（useState-1:render-time: ${renderTime}ms）`;
+  });
+
+  return (
+    <p>
+      Summary: {sum}
+      <span ref={spanRef}></span>
+    </p>
+  );
+}
+
+return () => {
+  const [count, setCount] = useState(10);
+  const [, forceUpdate] = useState({});
+  const dataSource = useMemo(() => Array(count).fill({ income: 1 }), [count]);
+
+  return (
+    <>
+      <div>
+        <button onClick={forceUpdate}>force update</button>
+      </div>
+      <input
+        defaultValue={count}
+        onBlur={(e) => setCount(Number(e.target.value))}
+      />
+      <Summary key={count} dataSource={dataSource} />
+    </>
+  );
+};
+```
+
+点击 **force update** 按钮，看看耗时？
+
+## 如何规划 state
+
+- 如果 state 之间有逻辑关联，放在同一个 state 中更好
+- 如果 state 之间没有逻辑关系，拆的越小越好
