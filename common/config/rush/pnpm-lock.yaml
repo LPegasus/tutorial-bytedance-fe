@@ -30,6 +30,7 @@ importers:
       lite-server: '*'
   ../../apps/lesson-4-cra:
     dependencies:
+      lorem-ipsum: registry.npm.taobao.org/lorem-ipsum/2.0.3
       react: registry.npm.taobao.org/react/17.0.2
       react-dom: registry.npm.taobao.org/react-dom/17.0.2_react@17.0.2
       react-router-dom: registry.npm.taobao.org/react-router-dom/5.2.0_react@17.0.2
@@ -39,8 +40,10 @@ importers:
       recoil: registry.npm.taobao.org/recoil/0.1.3_react-dom@17.0.2+react@17.0.2
       rxjs: registry.npm.taobao.org/rxjs/6.6.6
       styled-components: registry.npm.taobao.org/styled-components/5.2.1_react-dom@17.0.2+react@17.0.2
+      tslib: registry.npm.taobao.org/tslib/2.1.0
       web-vitals: registry.npm.taobao.org/web-vitals/1.1.0
     devDependencies:
+      '@sjtu-fe/configs': link:../../libraries/configs
       '@sjtu-fe/eslint-config': link:../../libraries/eslint-config
       '@testing-library/jest-dom': registry.npm.taobao.org/@testing-library/jest-dom/5.11.9
       '@testing-library/react': registry.npm.taobao.org/@testing-library/react/11.2.5_react-dom@17.0.2+react@17.0.2
@@ -52,6 +55,7 @@ importers:
       '@types/react-router-dom': registry.npm.taobao.org/@types/react-router-dom/5.1.7
       typescript: registry.npm.taobao.org/typescript/4.2.3
     specifiers:
+      '@sjtu-fe/configs': workspace:*
       '@sjtu-fe/eslint-config': workspace:*
       '@testing-library/jest-dom': ^5.11.4
       '@testing-library/react': ^11.1.0
@@ -61,6 +65,7 @@ importers:
       '@types/react': ^17.0.3
       '@types/react-dom': ^17.0.3
       '@types/react-router-dom': ^5
+      lorem-ipsum: ^2.0.3
       react: ^17.0.2
       react-dom: ^17.0.2
       react-router-dom: ^5.2.0
@@ -70,6 +75,7 @@ importers:
       recoil: ^0.1.3
       rxjs: ^6.6.6
       styled-components: ^5.2.1
+      tslib: ^2.1.0
       typescript: ^4.2.3
       web-vitals: ^1.0.1
   ../../apps/lesson-4-hooks:
@@ -17378,6 +17384,20 @@ packages:
       registry: https://r.npm.taobao.org/
       tarball: https://registry.npm.taobao.org/loose-envify/download/loose-envify-1.4.0.tgz
     version: 1.4.0
+  registry.npm.taobao.org/lorem-ipsum/2.0.3:
+    dependencies:
+      commander: registry.npm.taobao.org/commander/2.20.3
+    dev: false
+    engines:
+      node: '>= 8.x'
+      npm: '>= 5.x'
+    hasBin: true
+    name: lorem-ipsum
+    resolution:
+      integrity: sha1-nx+mNHgMn1ijSdTgkcO6dPczFk4=
+      registry: https://r.npm.taobao.org/
+      tarball: https://registry.npm.taobao.org/lorem-ipsum/download/lorem-ipsum-2.0.3.tgz
+    version: 2.0.3
   registry.npm.taobao.org/lottie-web/5.7.6:
     dev: false
     name: lottie-web
