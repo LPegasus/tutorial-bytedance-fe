@@ -30,6 +30,12 @@ module.exports = {
           activeBasePath: 'docs/hooks',
         },
         {
+          to: 'docs/js/index',
+          label: 'JS',
+          position: 'left',
+          activeBasePath: 'docs/hooks',
+        },
+        {
           href: 'https://github.com/LPegasus/tutorial-bytedance-fe',
           label: 'GitHub',
           position: 'right',
@@ -74,7 +80,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/LPegasus/tutorial-bytedance-fe',
             },
           ],
         },
