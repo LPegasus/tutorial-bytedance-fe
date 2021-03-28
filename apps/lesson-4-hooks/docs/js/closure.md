@@ -99,7 +99,10 @@ console.log(a); // => throw “Uncaught ReferenceError: b is not defined”
 
 当我们执行 `getGender` 方法时，由于 `getGender` 的 _FunctionScope_ 自身没有 `_gender` 这个变量，所以会往父作用域查询是否有叫 `_gender` 的变量。
 
-总结：父作用域无法访问子作用域的变量，子作用域可以访问父作用域的变量。在函数声明时，有一个俗称绑定作用域的过程。可以简单理解为把所有父作用域的箱子都记住，之后在执行的时候，如果碰到名字叫 A 的箱子，就从离自己近的箱子开始找名称为 A 的箱子。
+### 总结闭包的要点
+
+- 父作用域无法访问子作用域的变量，子作用域可以访问父作用域的变量。在函数声明时，有一个俗称绑定作用域的过程。可以简单理解为把所有父作用域的箱子都记住，之后在执行的时候，如果碰到名字叫 A 的箱子，就从离自己近的箱子开始找名称为 A 的箱子
+- 每次函数执行时，都会创建一个全新的闭包对象，与上一次函数执行时的闭包对象完全独立
 
 ```js title="哪个箱子离我近就用哪个"
 function grandpa() {
@@ -109,15 +112,14 @@ function grandpa() {
     firstName = 'Daddy';
     return function me() {
       console.log(firstName); // => 'Daddy'
-      return function son() {
-        var firstName = 'Son';
+      return function son(firstName) {
         console.log(lastName); // => 'A' 只有在 grandpa 的函数作用域里有
         console.log(firstName); // => 'Son' 离我最近
       };
     };
   };
 }
-grandpa()()()();
+grandpa()()()('Son');
 ```
 
 **闭包作用域就是函数作用域+父作用域集合。闭包变量就是闭包作用域中的变量集合**
@@ -125,3 +127,48 @@ grandpa()()()();
 对于上面函数 `son` 来讲，闭包变量有`firstName=Son`、`firstName=Daddy`、`firstName=grandpa`、`lastName=A`（从近到远排列，放入本函数作用域的参数表）。在访问 firstName 和 lastName 时，分别按照从近到远的方式查找。
 
 继续阅读 [可视化 v8 引擎管理内存](/docs/js/memory-management-in-v8) 了解更多函数执行时的作用域、内存分配相关知识，加深对闭包的理解。
+
+## React 中常见的闭包场景
+
+React Hooks 的 API 设计存在大量闭包，追踪闭包变量是所有函数式编程的基础。
+
+```jsx live
+return () => {
+  const [count, setCount] = useState(0);
+  useEffect(function () {
+    const id = setInterval(() => {
+      console.log('count1: ' + count);
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
+};
+```
+
+> 按 F12 打开 DevTools，查看 console 打印的 count1 是几
+
+上面的代码由于 `useEffect` 函数的第二个传参是空数组，所以 `useEffect` 只会在首次渲染的时候执行。函数只执行一次，所以绑定的 count1 是首次渲染时的父函数作用域的 `count1=0`。所以，console 打印的一直是 0。
+
+让我们稍微修改一下代码：
+
+```jsx live
+let count = 0;
+return () => {
+  const [, forceUpdate] = useState({}); // 触发组件重绘用
+  function setCount(value) {
+    count = value;
+    forceUpdate({});
+  }
+  useEffect(function () {
+    const id = setInterval(() => {
+      console.log('count2: ' + count);
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
+};
+```
+
+> count2 能正确更新到点击数，思考一下为什么？
+
+当我们把 count 的作用域放到组件的外面时，每次组件函数执行时，绑定的父作用域的 count 没有改变，所以在修改之后，会影响到 console 的打印结果
