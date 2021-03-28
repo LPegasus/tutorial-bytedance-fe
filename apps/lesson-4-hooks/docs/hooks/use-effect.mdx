@@ -42,6 +42,7 @@ return () => {
 ```tsx live
 return () => {
   const [speed, setSpeed] = useState(1.0);
+  const [musicSrc, setMusicSrc] = useState('/audio/music1.flac');
   const [volume, setVolume] = useState(1.0);
   const [loadError, setLoadError] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -72,6 +73,10 @@ return () => {
         <option value={1.5}>1.5</option>
         <option value={2.0}>2.0</option>
       </select>
+      <select value={musicSrc} onChange={(e) => setMusicSrc(e.target.value)}>
+        <option value="/audio/music1.flac">music1</option>
+        <option value="/audio/music2.flac">music2</option>
+      </select>
       {loadError ? (
         <div>
           <strong>Music load failed.</strong>
@@ -79,7 +84,7 @@ return () => {
       ) : (
         <figure>
           <figcaption>Music</figcaption>
-          <audio controls src="/audio/music1.flac" ref={audioRef}>
+          <audio controls src={musicSrc} ref={audioRef}>
             Your browser does not support the
           </audio>
         </figure>

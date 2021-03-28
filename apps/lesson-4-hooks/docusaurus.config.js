@@ -2,13 +2,13 @@
 module.exports = {
   title: 'React Tutorial',
   tagline: '前端课程 React 入门',
-  url: 'https://localhost:3000/',
+  url: 'https://lpegasus.github.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'ByteDance', // Usually your GitHub org/user name.
+  projectName: 'lpegasus.github.io',
   themeConfig: {
     navbar: {
       // title: 'React 入门',
