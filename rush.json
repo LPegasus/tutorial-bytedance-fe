@@ -350,6 +350,10 @@
    */
   "projects": [
     {
+      "packageName": "@sjtu-fe/final-proj-sort",
+      "projectFolder": "apps/final-proj-sort"
+    },
+    {
       "packageName": "@sjtu-fe/github-scanner",
       "projectFolder": "apps/github-scanner"
     },
